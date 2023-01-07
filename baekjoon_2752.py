@@ -1,10 +1,6 @@
-numbers = input()
+list = list(map(int, input().split()))
 
-list = numbers.split()
-
-num1 = int(list[0])
-num2 = int(list[1])
-num3 = int(list[2])
+num1, num2, num3 = list
 
 if num1 < num2:
     if num1 < num3:
