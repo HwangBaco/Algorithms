@@ -14,4 +14,3 @@ li = list(input())
 for _ in range(k):
     li.pop(li.index(min(li)))
 print(''.join(li))
-틀린 문제
