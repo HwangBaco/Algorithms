@@ -11,7 +11,7 @@
 ans = 0
 
 for _ in range(int(input())):
-    flag = 1
+    is_index_error = 1
     d = {chr(97+i) : 0 for i in range(26)}
     s = input()
     for i in range(len(s)):
@@ -20,8 +20,8 @@ for _ in range(int(input())):
         elif d[s[i]] == 0:
             d[s[i]] += 1
         else:
-            flag = 0
-    if flag:
+            is_index_error = 0
+    if is_index_error:
        ans += 1
     else:
         pass

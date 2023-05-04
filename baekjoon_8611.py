@@ -7,7 +7,7 @@ n = int(input())
 store = n
 flag2 = True
 for k in range(2, 11):
-    flag = True
+    is_index_error = True
     n = store
     res = ""
     ans = []
@@ -20,8 +20,8 @@ for k in range(2, 11):
     # print(res)
     for i in range(len(res)//2):
         if res[i] != res[-1-i]:
-            flag = False
-    if flag:
+            is_index_error = False
+    if is_index_error:
         print(k, res)
         flag2 = False
 if flag2:

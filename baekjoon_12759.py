@@ -29,10 +29,10 @@ while 1:
     if ['X', 'X', 'X'] in res: winner = 2
 
     if winner == 0:
-        flag = False  # 공백이 있으면 True, 없으면 False
+        is_index_error = False  # 공백이 있으면 True, 없으면 False
         for i in range(len(res)):
-            if ' ' in res[i]: flag = True
-        if not flag: winner = 3
+            if ' ' in res[i]: is_index_error = True
+        if not is_index_error: winner = 3
 
     # 승부가 결정되었을 때
     if winner > 0: break

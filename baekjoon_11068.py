@@ -1,7 +1,7 @@
 t = int(input())
 for i in range(t):
     s = int(input())
-    flag = False
+    is_index_error = False
 
     for j in range(2, 65):
         val = []
@@ -16,9 +16,9 @@ for i in range(t):
             if val[k] != val[-1 - k]:
                 is_palindrome = False
         if is_palindrome == True:
-            flag = True
+            is_index_error = True
 
-    if flag == True:
+    if is_index_error == True:
         print(1)
     else:
         print(0)

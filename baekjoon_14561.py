@@ -9,10 +9,10 @@ for _ in range(int(input())):
         n //= b
         result = ''.join(ans[::-1])
         # print(result)
-        flag = 0
+        is_index_error = 0
         for i in range(len(result)//2):
-            if result[i] == result[-1-i]: flag = 1
+            if result[i] == result[-1-i]: is_index_error = 1
             else :
-                flag = 0
+                is_index_error = 0
                 break
-    print(flag)
+    print(is_index_error)

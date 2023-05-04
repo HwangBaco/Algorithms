@@ -10,14 +10,14 @@
 score_a = list(map(int, input().split()))
 score_b = list(map(int, input().split()))
 sum_a, sum_b = 0, 0
-flag = 0
+is_index_error = 0
 
 for i in range(9):
     sum_a += score_a[i]
     if sum_a > sum_b:
-        flag = 1
+        is_index_error = 1
     sum_b += score_b[i]
-if sum_a < sum_b and flag == 1:
+if sum_a < sum_b and is_index_error == 1:
     print("Yes")
 else:
     print("No")
