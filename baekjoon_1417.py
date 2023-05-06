@@ -10,14 +10,33 @@ input = sys.stdin.readline
 from heapq import *
 
 # 기본 변수 및 입력 구성
-stack = list()
 ans = 0
-flag = 0
+hq = []
 N = int(input())
 
 # 기호 1번을 찍으려고 하는 사람의 수 (입력)
 # 기호 2번을 찍으려고 하는 사람의 수 (입력)
 # ... N개의 줄에 걸쳐 입력
-for i in range(N):
-    stack.append(int(input()))
+dasom = int(input())
+for i in range(1, N):
+    heappush(hq, -(int(input())))
+
+# hq가 비어있지 않으면,
+# 아래 과정 반복
+# 힙에서 하나 빼고(tmp) dasom이랑 비교
+# dasom이 더 크면 break
+# dasom이 더 작으면 ans += 1; tmp -= 1; dasom += 1; heappush(hq, -tmp);
+if hq:
+    while True:
+        tmp = -heappop(hq)
+        if dasom > tmp: break
+        tmp -= 1
+        dasom += 1
+        heappush(hq, -tmp)
+        ans += 1
+    print(ans)
+
+# hq가 비어있으면 print(0)
+else:
+    print(ans)
 
