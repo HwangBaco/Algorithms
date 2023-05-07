@@ -20,3 +20,4 @@ for i in range(t):
         d[_li[i]] = order
 for i in li:
     print(d[i], end=' ')
+
