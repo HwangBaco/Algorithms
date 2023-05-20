@@ -1,4 +1,3 @@
-
 stack = list()
 ans = list()
 max_val = 0
