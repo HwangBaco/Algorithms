@@ -34,7 +34,6 @@ def dijkstra(start):
             if distance[now + 1] > dist + 1:  # 기존 비용보다 현재 비용이 더 작다면
                 distance[now + 1] = dist + 1
                 heapq.heappush(q, (dist + 1, now + 1))
-                
 dijkstra(0)
 
 # 결과 출력
