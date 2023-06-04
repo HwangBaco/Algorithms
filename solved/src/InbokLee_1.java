@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class inbokLee {
+public class InbokLee_1 {
     static int n, m;
     static int[][] map;
     static int[][] dp;
