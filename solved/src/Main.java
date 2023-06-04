@@ -4,32 +4,15 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int n, m;
-    static int[] arr;
-    static int cnt;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        arr = new int[n];
-
+        int n = Integer.parseInt(br.readLine());
+        int sum = 0;
+        String s = br.readLine();
         for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+            int parseInt = Integer.parseInt(s.substring(i, i + 1));
+            sum += parseInt;
         }
-
-        for (int i = (n-1); i >= 0; i--) {
-            if (m <= 0) {
-                break;
-            }
-            if (arr[i] <= m) {
-                while (arr[i] <= m) {
-                   m -= arr[i];
-                   cnt++;
-                }
-            }
-        }
-        System.out.println(cnt);
+        System.out.println(sum);
     }
 }
