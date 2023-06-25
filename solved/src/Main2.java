@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 // B5014
 // 이따가 풀 것
-public class Main {
+public class Main2 {
     static boolean[] visited;
     static int ans;
     static int F, S, G, U, D;
