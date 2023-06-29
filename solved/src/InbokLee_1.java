@@ -11,6 +11,7 @@ public class InbokLee_1 {
     static int[][] dp;
     static int[] now;
     static boolean[][] visited;
+
     /*
     중요한 건, map은 이동할 때 꿀 값을 참고하는 용도일 뿐이다.
     map을 통해 길찾기를 수행(BFS), 매 이동에서 만약 칼럼이 이동될 때 쌓이는 값이 기존의 dp[][]값보다 크다면
@@ -42,7 +43,7 @@ public class InbokLee_1 {
         * */
 
         bfs(0, 0);
-        System.out.println(dp[m-1][n-1]);
+        System.out.println(dp[m - 1][n - 1]);
 
     }
 
