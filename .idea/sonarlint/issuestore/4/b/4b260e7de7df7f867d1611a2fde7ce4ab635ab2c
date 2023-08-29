@@ -1,0 +1,20 @@
+
+a	java:S101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(•žÐQ
+W
+java:S49733"<Strings and Boxed types should be compared using "equals()".(³‚´‚úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ôô´†
+:
+java:S1659"Declare "k" on a separate line.(øÃ—ùüÿÿÿÿ
+k
+java:S1450"PRemove the "k" field and declare it as a local variable in the relevant methods.(øÃ—ùüÿÿÿÿ
+k
+java:S1450"PRemove the "n" field and declare it as a local variable in the relevant methods.(øÃ—ùüÿÿÿÿ
+J
+java:S2864("4Iterate over the "entrySet" instead of the "keySet".(§µÊ·
+Q	java:S125*"<This block of commented-out lines of code should be removed.(©µ³
+Y
+java:S1155.">Use isEmpty() to check whether the collection is empty or not.(§¹»Èÿÿÿÿÿ
+Y
+java:S11553">Use isEmpty() to check whether the collection is empty or not.(³‚´‚úÿÿÿÿ
+M	java:S1068"9Replace this use of System.out or System.err by a logger.(ü„ê!
