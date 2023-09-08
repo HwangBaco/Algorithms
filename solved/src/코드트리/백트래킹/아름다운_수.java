@@ -38,38 +38,11 @@ public class 아름다운_수 {
     private static boolean isBeautifulNum(List<Integer> li) {
         for (int i = 0; i < li.size(); i++) {
             Integer elem = li.get(i);
-            if (elem == 1) {
-                continue;
-            } else if (elem == 2) {
+            while (--elem > 0) {
                 if (inRange(i + 1)) {
                     Integer nextElem = li.get(i + 1);
                     if (elem.equals(nextElem)) {
                         i = i + 1;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            } else if (elem == 3) {
-                if (inRange(i + 2)) {
-                    Integer nextElem = li.get(i + 1);
-                    Integer thirdElem = li.get(i + 2);
-                    if (elem.equals(nextElem) && nextElem.equals(thirdElem)) {
-                        i = i + 2;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            } else if (elem == 4) {
-                if (inRange(i + 3)) {
-                    Integer nextElem = li.get(i + 1);
-                    Integer thirdElem = li.get(i + 2);
-                    Integer fourthElem = li.get(i + 3);
-                    if (elem.equals(nextElem) && nextElem.equals(thirdElem) && thirdElem.equals(fourthElem)) {
-                        i = i + 3;
                     } else {
                         return false;
                     }
