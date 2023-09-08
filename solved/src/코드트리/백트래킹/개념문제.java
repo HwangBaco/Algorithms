@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 public class 개념문제 {
     /*
     * 백트래킹은 재귀 함수를 이용하여 '순열과 조합'을 구현하는 거라고 이해하고 있으면 된다.
+    * 즉, 일종의 완탐 알고리즘.
     * */
 
     /*
