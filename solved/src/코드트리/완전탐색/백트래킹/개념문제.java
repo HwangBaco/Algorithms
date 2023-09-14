@@ -1,4 +1,4 @@
-package 코드트리.백트래킹;
+package 코드트리.완전탐색.백트래킹;
 
 import java.io.BufferedReader;
 import java.io.IOException;
