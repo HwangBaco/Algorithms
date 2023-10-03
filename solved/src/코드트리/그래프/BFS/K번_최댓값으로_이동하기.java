@@ -20,7 +20,6 @@ public class K번_최댓값으로_이동하기 {
     private static int[][] visited;
     private static int startNum;
     private static int ansX, ansY, ansNum;
-    private static int startX, startY;
     private static Queue<Pair> q = new LinkedList<>();
     public static void main(String[] args) throws IOException {
         /*
@@ -40,8 +39,8 @@ public class K번_최댓값으로_이동하기 {
             }
         }
         st = new StringTokenizer(br.readLine());
-        startY = Integer.parseInt(st.nextToken())-1;
-        startX = Integer.parseInt(st.nextToken())-1;
+        int startY = Integer.parseInt(st.nextToken())-1;
+        int startX = Integer.parseInt(st.nextToken())-1;
         for (int i = 0; i < k; i++) {
             visited = new int[n][n];
             startNum = arr[startY][startX];
@@ -80,20 +79,18 @@ public class K번_최댓값으로_이동하기 {
 
     private static void push(int y, int x) {
         visited[y][x] = 1;
-        if (arr[y][x] <= startNum && x != startX || y != startY) {
-            if (ansNum < arr[y][x]) {
+        if (ansNum < arr[y][x]) {
+            ansY = y;
+            ansX = x;
+            ansNum = arr[y][x];
+        } else if (ansNum == arr[y][x]) {
+            if (y < ansY) {
                 ansY = y;
                 ansX = x;
                 ansNum = arr[y][x];
-            } else if (ansNum == arr[y][x]) {
-                if (y < ansY) {
-                    ansY = y;
-                    ansX = x;
-                    ansNum = arr[y][x];
-                } else if (y <= ansY && x < ansX) {
-                    ansX = x;
-                    ansNum = arr[y][x];
-                }
+            } else if (y <= ansY && x < ansX) {
+                ansX = x;
+                ansNum = arr[y][x];
             }
         }
         q.add(new Pair(y, x));
