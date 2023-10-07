@@ -1,91 +1,113 @@
 package 코드트리.그래프.BFS;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.io.InputStreamReader;
+import java.util.*;
 
 public class 돌_잘_치우기 {
     private static int n, m, k;
-    private static int[][] grid;
-    private static int[][] moved;
-    private static int[][] visited;
-    private static Queue<Integer> pq = new PriorityQueue<>();
-
     private static Queue<Pair> q = new LinkedList<>();
-    private static class Pair {
-        private int x, y;
+    private static List<Pair> li = new ArrayList<>(); // 돌 위치 저장용 리스트
+    private static List<Pair> _li = new ArrayList<>(); // 백트래킹용 리스트
+    private static PriorityQueue<Integer> pq = new PriorityQueue<>();
+    private static int ans;
+    private static int[][] arr;
+    private static int[][] visited;
 
-        public Pair(int y, int x) {
-            this.y = y;
-            this.x = x;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        k = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        arr = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < n; j++) {
+                int num = Integer.parseInt(st.nextToken());
+                if (num == 1) {
+                    li.add(new Pair(i, j));
+                }
+                arr[i][j] = num;
+            }
         }
+
+        for (int i = 0; i < k; i++) {
+            st = new StringTokenizer(br.readLine());
+            int startY = Integer.parseInt(st.nextToken())-1;
+            int startX = Integer.parseInt(st.nextToken())-1;
+            go(startY, startX);
+        }
+        System.out.println(-pq.poll());
+    }
+    private static void go(int startY, int startX) {
+        if (_li.size() == m) {
+            for (Pair p : _li) {
+                int x = p.x;
+                int y = p.y;
+                arr[y][x] = 0;
+            }
+            visited = new int[n][n];
+            push(startY, startX);
+            bfs();
+            for (Pair p : _li) {
+                int x = p.x;
+                int y = p.y;
+                arr[y][x] = 1;
+            }
+            return;
+        }
+        for (Pair pair : li) {
+            _li.add(pair);
+            go(startY, startX);
+            _li.remove(pair);
+        }
+
+    }
+
+    private static void bfs() {
+        int[] dx = new int[]{0, 1, 0, -1};
+        int[] dy = new int[]{1, 0, -1, 0};
+        ans = 1;
+        while (!q.isEmpty()) {
+            Pair crt = q.poll();
+            int crtX = crt.x;
+            int crtY = crt.y;
+            for (int i = 0; i < 4; i++) {
+                int newY = crtY + dy[i];
+                int newX = crtX + dx[i];
+                if (canGo(newY, newX)) {
+                    push(newY, newX);
+                }
+            }
+        }
+        pq.add(-ans);
+    }
+
+
+    private static void push(int y, int x) {
+        visited[y][x] = 1;
+        ans++;
+        q.add(new Pair(y, x));
+    }
+
+    private static boolean canGo(int y, int x) {
+        return inRange(y, x) && visited[y][x] == 0 && arr[y][x] == 0;
     }
 
     private static boolean inRange(int y, int x) {
         return y >= 0 && y < n && x >= 0 && x < n;
     }
 
-    private static boolean canGo(int y, int x, int[][] grid, int[][] visited) {
-        if (!inRange(y, x) || grid[y][x] == 1 || visited[y][x] == 1) {
-            return false;
+    private static class Pair {
+        private int x;
+        private int y;
+
+        private Pair(int y, int x) {
+            this.x = x;
+            this.y = y;
         }
-        return true;
-    }
-    private static boolean canThrough(int y, int x, int[][] grid) {
-        if (inRange(y, x) && grid[y][x] == 1 && moved[y][x] == 0 && k > 0) {
-            return true;
-        }
-        return false;
     }
 
-    private static void push(int y, int x) {
-        visited[y][x] = 1;
-        q.add(new Pair(y, x));
-    }
-
-    private static void DFS(int y, int x, int[][] grid, int startY, int startX) {
-        int[] dy = new int[]{0, 1, 0, -1};
-        int[] dx = new int[]{1, 0, -1, 0};
-        for (int i = 0; i < 4; i++) {
-            int newY = y + dy[i];
-            int newX = x + dx[i];
-
-            if (canGo(newY, newX, grid, moved)) {
-                moved[newY][newX] = 1;
-                DFS(newY, newX, grid, startY, startX);
-            } else if (canThrough(newY, newX, grid)) {
-                k--;
-                grid[newY][newX] = 0;
-                moved[newY][newX] = 1;
-                if (k == 0) {
-                    push(startY, startX);
-                    BFS(grid);
-                } else {
-                    DFS(newY, newX, grid, startY, startX);
-                }
-            }
-        }
-    }
-    private static void BFS(int[][] grid) {
-        int[] dy = new int[]{0, 1, 0, -1};
-        int[] dx = new int[]{1, 0, -1, 0};
-        while (!q.isEmpty()) {
-            Pair curr = q.poll();
-            int y = curr.y;
-            int x = curr.x;
-            for (int i = 0; i < 4; i++) {
-                int newY = y + dy[i];
-                int newX = x + dx[i];
-                if (canGo(newY, newX, grid, visited)) {
-                    push(newY, newY);
-                }
-            }
-        }
-    }
-    public static void main(String[] args) throws IOException {
-        for (int i = 0; i < m; i++) {
-
-        }
-    }
 }
