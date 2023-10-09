@@ -7,13 +7,14 @@ import java.util.*;
 
 public class 돌_잘_치우기 {
     private static int n, m, k;
-    private static Queue<Pair> q = new LinkedList<>();
-    private static List<Pair> li = new ArrayList<>(); // 돌 위치 저장용 리스트
-    private static List<Pair> _li = new ArrayList<>(); // 백트래킹용 리스트
-    private static PriorityQueue<Integer> pq = new PriorityQueue<>();
-    private static int ans;
     private static int[][] arr;
+    private static int ans;
+    private static List<Pair> sPos = new ArrayList<>();
+    private static List<Pair> stonePos = new ArrayList<>(); // 돌 위치 저장용 리스트
+    private static List<Pair> selectedStones = new ArrayList<>(); // 백트래킹용 리스트
+    private static Queue<Pair> q = new LinkedList<>();
     private static int[][] visited;
+    private static PriorityQueue<Integer> pq = new PriorityQueue<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,23 +28,25 @@ public class 돌_잘_치우기 {
             for (int j = 0; j < n; j++) {
                 int num = Integer.parseInt(st.nextToken());
                 if (num == 1) {
-                    li.add(new Pair(i, j));
+                    stonePos.add(new Pair(i, j));
                 }
                 arr[i][j] = num;
             }
         }
-
         for (int i = 0; i < k; i++) {
             st = new StringTokenizer(br.readLine());
             int startY = Integer.parseInt(st.nextToken())-1;
             int startX = Integer.parseInt(st.nextToken())-1;
-            go(startY, startX);
+            sPos.add(new Pair(startY, startX));
+        }
+        for (Pair p : sPos) {
+            go(p.y, p.x);
         }
         System.out.println(-pq.poll());
     }
     private static void go(int startY, int startX) {
-        if (_li.size() == m) {
-            for (Pair p : _li) {
+        if (selectedStones.size() == m) {
+            for (Pair p : selectedStones) {
                 int x = p.x;
                 int y = p.y;
                 arr[y][x] = 0;
@@ -51,17 +54,18 @@ public class 돌_잘_치우기 {
             visited = new int[n][n];
             push(startY, startX);
             bfs();
-            for (Pair p : _li) {
+            for (Pair p : selectedStones) {
                 int x = p.x;
                 int y = p.y;
                 arr[y][x] = 1;
             }
             return;
         }
-        for (Pair pair : li) {
-            _li.add(pair);
+
+        for (Pair pair : stonePos) {
+            selectedStones.add(pair);
             go(startY, startX);
-            _li.remove(pair);
+            selectedStones.remove(selectedStones.size() - 1);
         }
 
     }
