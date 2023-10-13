@@ -62,6 +62,8 @@ public class 비를피하기 {
             }
             step++;
         }
+        visited = new boolean[n][n];
+        step = 0;
         ans[startY][startX] = -1;
     }
 
