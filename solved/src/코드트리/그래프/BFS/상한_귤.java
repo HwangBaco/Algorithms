@@ -23,25 +23,7 @@ public class 상한_귤 {
     private static int[][] dist;
 
     public static void main(String[] args) throws IOException {
-        /*
-         * 0, 1, 2로만 이루어진 nxn격자
-         * 0 : 벽
-         * 1 : 정상 귤
-         * 2 : 상한 귤
-         *
-         * k개의 상한 귤로부터(시작점)
-         * 1초에 한번씩 모든 인접한 귤이 상하게 될 때,
-         * 각 귤마다 최초로 상하게 되는 시간을 구하는 프로그램을 작성
-         *
-         * 처음 입력받을 때 상한 귤의 좌표를 starts에 저장
-         * 한번에 q에 입력한 뒤
-         * bfs 돌려서 dist 배열에 거리 채우기
-         *
-         * 출력할 때,
-         * 1. arr[y][x] == 0 이면 -1출력
-         * 2. visited[y][x] == false 이면 -2 출력
-         * 3. arr[y][x] == 1 or 2 이면 dist[y][x] 출력
-         * */
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
