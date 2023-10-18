@@ -34,7 +34,7 @@ public class 계단오르기_메모이제이션 {
         } else if (i == 2 || i == 3) {
             return 1;
         }
-        dp[i] = memoization(i - 2) + memoization(i - 3);
+        dp[i] = (memoization(i - 2) + memoization(i - 3)) % 10007;
         return dp[i];
 
     }
