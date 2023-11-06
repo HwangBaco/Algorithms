@@ -33,15 +33,18 @@ public class 돌_잘_치우기 {
                 arr[i][j] = num;
             }
         }
+
         for (int i = 0; i < k; i++) {
             st = new StringTokenizer(br.readLine());
             int startY = Integer.parseInt(st.nextToken())-1;
             int startX = Integer.parseInt(st.nextToken())-1;
             sPos.add(new Pair(startY, startX));
         }
+
         for (Pair p : sPos) {
             go(p.y, p.x);
         }
+
         System.out.println(-pq.poll());
     }
     private static void go(int startY, int startX) {
