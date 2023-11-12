@@ -7,29 +7,26 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 최대_증가_부분_수열 {
+public class 최대_감소_부분_수열 {
     private static int n;
     private static int[] arr;
     private static int[] dp;
-
     private static Queue<Integer> pq = new PriorityQueue<>();
-
     public static void main(String[] args) throws IOException {
         /*
-        * 중요한 것은, 숫자가 연속될 필요는 없다는 것
+        * 최장 감소 부분 수열 구하는 프로그램
         * */
         init();
+
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                if (arr[i] > arr[j]) {
+                if (arr[i] < arr[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                     pq.add(-dp[i]);
                 }
             }
         }
         System.out.println(-pq.poll());
-
-
     }
 
     private static void init() throws IOException {
@@ -43,8 +40,7 @@ public class 최대_증가_부분_수열 {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        dp[0] = 1;
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             dp[i] = 1;
         }
         pq.add(-1);
