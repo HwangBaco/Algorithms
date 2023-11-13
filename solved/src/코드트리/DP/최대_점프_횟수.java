@@ -12,6 +12,28 @@ public class 최대_점프_횟수 {
     private static int ans = 0;
 
     public static void main(String[] args) throws IOException {
+        init();
+
+        // dp 배열 타뷸레이션
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if ((j + arr[j]) >= i) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+        }
+
+        // 첫번째 위치부터 연속되는 점프 값 중 최대 구하기
+        for (int i = 1; i < n; i++) {
+            if (dp[i] == 0) {
+                break;
+            }
+            ans = Math.max(dp[i], ans);
+        }
+        System.out.println(ans);
+    }
+
+    private static void init() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
@@ -22,20 +44,5 @@ public class 최대_점프_횟수 {
             arr[i] = Integer.parseInt(st.nextToken());
             dp[i] = 0;
         }
-
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if ((j + arr[j]) >= i) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-            }
-        }
-        for (int i = 1; i < n; i++) {
-            if (dp[i] == 0) {
-                break;
-            }
-            ans = Math.max(dp[i], ans);
-        }
-        System.out.println(ans);
     }
 }
