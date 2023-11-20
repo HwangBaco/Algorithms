@@ -1,3 +1,5 @@
+package 코드트리.DP;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 이차원_최대_증가_수열 {
     private static int n, m;
     private static int[][] arr;
     private static int[][] dp;
@@ -36,8 +38,9 @@ public class Main {
                 for (int k = 0; k < i; k++) {
                     for (int l = 0; l < j; l++) {
                         if (arr[i][j] > arr[k][l]) {
-                            if(dp[k][l] == 0)
+                            if (dp[k][l] == 0) {
                                 continue;
+                            }
 
                             dp[i][j] = Math.max(dp[i][j], dp[k][l] + 1);
                             pq.add(-dp[i][j]);

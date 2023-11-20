@@ -12,7 +12,7 @@
 //    최댓값을 구해주는 경우에는 다음과 같이 maxVal에 INT_MIN 값을,
 //    최솟값을 구해주는 경우에는 minVal에 INT_MAX를 초기값으로 넣어주는 과정이 필요합니다.
 //    **/
-//    public class Main {
+//    public class 이차원_최대_증가_수열 {
 //        public static final int INT_MIN = Integer.MIN_VALUE;
 //        public static final int INT_MAX = Integer.MAX_VALUE;
 //
