@@ -10,30 +10,11 @@ public class 최단_run_length_인코딩_실력검증 {
     private static int n;
     private static Queue<Integer> pq = new PriorityQueue<>();
     public static void main(String[] args) throws IOException {
-        /*
-        * 길이가 n(<= 10)인 문자열 A
-        * 특정 횟수만큼 오른쪽으로 shift
-        * 처리 이후 문자열에 run length encoding을 진행헀을 때의 길이가 최소가 되도록
-        *
-        * run length encoding이란, 비손실 압축 방식으로,
-        * 연속해서 나온 문자와 연속해서 나온 개수로 나타내는 방식.
-        * ex) aaabbbbcaa -> a3b4c1a2
-        *
-        * 길이 n인 문자열
-        * aaabbbcccd
-        * n번 shift하면서 encoding 하여 길이 pq에 저장
-        *
-        * encoding 과정은 다음과 같다.
-        * 문자열 iteration하면서
-        * if 다음 문자가 존재할 경우
-        *   현재 문자랑 다음 문자가 같은지 검사
-        *       if (같다면) map.putIfAbsent(문자, 1); map.replace(문자, map.get(문자) + 1);
-        *       else (다르다면) map.putIfAbsent(다음문자, 1);
-        * */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine().trim();
         n = s.length();
 
+        // 주어진 문자열을 shift하고, encoding한다.
         for (int i = 0; i < n; i++) {
             String temp = s.substring(0, 1);
             String left = s.substring(1, n);
@@ -41,26 +22,37 @@ public class 최단_run_length_인코딩_실력검증 {
             s = sb.append(left).append(temp).toString();
             encoding(s);
         }
+        // 정답을 추출한다.
         System.out.println(pq.poll());
     }
 
     private static void encoding(String s) {
+        // 첫 항을 StringBuilder에 담아둔다.
         StringBuilder sb = new StringBuilder();
-        int length = 1;
         sb.append(s.charAt(0));
-        // 첫 항은 넘기고, 첫 항의 길이만큼 length 초기화한채로 진행
+        // 중복되는 문자의 길이를 담아줄 duplicateLength 변수를 1로 초기화한다.
+        int duplicateLength = 1;
+
+        // 문자열의 index를 1부터 n까지 순회하면서 이전 인덱스의 문자과 현재 인덱스의 문자가 동일한지 비교한다.
         for (int i = 1; i < n; i++) {
             char prevChar = s.charAt(i-1);
             char crtChar = s.charAt(i);
+
+            // 만약 현재 문자가 이전 문자와 중복되는 경우 중복길이 변수에 +1 처리를 한다.
             if (prevChar == crtChar) {
-                length++;
+                duplicateLength++;
+
+            // 만약 현재 문자가 이전 문자와 다른 경우, 중복이 종료되었으므로 중복되었던 문자와 그 길이를 인코딩 문자열에 추가하고,
+            // 중복 문자열 변수를 1로 초기화한다.
             } else {
-                sb.append(length);
+                sb.append(duplicateLength);
                 sb.append(crtChar);
-                length = 1;
+                duplicateLength = 1;
             }
         }
-        sb.append(length);
+        // 가장 마지막 문자에 대한 길이 추가를 처리해준다.
+        sb.append(duplicateLength);
+        // 우선순위 큐에 이번 인코딩 문자열의 길이를 추가해준다.
         pq.add(sb.toString().length());
     }
 
