@@ -68,13 +68,19 @@ public class 연결리스트1 {
         private void insert(Node node) {
             node.prev = this.prev;
             node.next = this;
-            this.prev = node;
+            if (node.prev != null) {
+                node.prev.next = node;
+            }
+            node.next.prev = node;
         }
 
         private void append(Node node) {
             node.next = this.next;
             node.prev = this;
-            this.next = node;
+            node.prev.next = node;
+            if (node.next != null) {
+                node.next.prev = node;
+            }
         }
         private Node(String data) {
             this.data = data;
