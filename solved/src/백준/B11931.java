@@ -23,5 +23,6 @@ public class B11931 {
             sb.append(ts.pollLast().toString()).append("\n");
         }
         System.out.println(sb);
+
     }
 }
