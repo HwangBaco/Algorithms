@@ -1,8 +1,0 @@
-
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ýÿÚ–þÿÿÿÿ8³§îä˜1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¶ØÜ€øÿÿÿÿ8¶§îä˜1
-‰
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8·¨îä˜1
-C
-java:S1659	"!Declare "res" on a separate line.(À±’êúÿÿÿÿ8»¨îä˜1
-T	java:S106"9Replace this use of System.out or System.err by a logger.(ü„ê!8Á¨îä˜1

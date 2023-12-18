@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53ea5540-583d-482d-9e71-0ea69756e3b6" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c4aba5a8e3b0b82626d4b61f68f9c9d0d8a2ee6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f2d4a4d8d7d248d116334555b09f3fc93fce53e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0fb5cf8be5c0a428f797743389284f2fb82e05bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/1/11a6ee006732cd8265bc24d44a22e965672c7017" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/16217a5c57638edac841b99fbb239c7d85959efd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c783008b473b192d80cc12efaf1d9477b02de0b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d632ff005bf10344d2235cea385dd1f7077a930" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e86c7cc442dfc19484413c09db7c68fe0f99997" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/f/2f17d9a6f2b10261367e7d3e7f0a914ed313d4dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37cabea2c882cf80b1a8b4cd8d7c817475832d98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3da522edd9bc1b8b2eaf7fcb453bdecc2cbfee01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3daf2e771a6641715da47b5d1123aeab0c957b05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3ed5cbb8676362aa1b1b012a290123e99b2c1fa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41ae35f376757ff227c2ba9c936ccc4f253a43d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/4781ef63335a0b4b0350c7f093438acfe919d5dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b260e7de7df7f867d1611a2fde7ce4ab635ab2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4df9bbb0f9ee56f44082fb748fac5471834fd1f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/68ebe1106c9acdd05ce2be8023b798e311815a85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69baa1c0ec9c67f922bd32687ec498dc4cf101e2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/5/750c98c1649ef30a621344395197ab0fb7f75156" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/5/756b807c6bfc44eecb68376e48f14cebd9314cdd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/78e69034534cf0c0b984f5f435c015a2a32620e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/78f746ed8e9e8f0d7e7b656c9c02e248eb471385" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e3f1872a54a15d951599771ddf803416a00ba78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/8093c3630edb8dc1cf8e689f9f230614a3587941" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8cba74c1226028aeb4220458f0430134ec665ce1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/94540cb3225b07293a97d480a1c54fbfd78fb7a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9905b0e23707c458ff74edae86a9990062dce4fc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/992647ca0372f1ab14b4bca1032ac5aa9f0c59eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99c10a88a83b373734ed60fab7360d7085ac4fa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b35930d22f259943c89dc5ca139a780a37262d5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fb8646f016dd03ea2b2c31404fee972581704b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a41db9accd5aca2abc53457e10ba3d6ef9f5c38f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/7/a72b4a099a8b1c799b4de8bc6250a972a3175dcc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5c69d962ede0bede93bb757dfd41f6813e1a715" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b6f44d56a238012e9729e0a84dcb2b3362b57ad4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bbe4401d224755e6cbd57f441a911b30e71c9fdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c15385fe9285a4282193aa73e946e7c37079e611" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c399bb24e97689e31144e76e939c292bb9f98928" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/e/cea32bd63943d7b42ce44aed1b12953051759f46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5d8e4be563a244817a5622ce6de9f97a222e1b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5e99ae627f8420d7ed74f7bb6f8ded07abd3a44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8b8f36b389cc5a6a25b43bf27c540be45108652" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dba9246959f310d8cb2a5e9583350c259a233a4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e276e0b991243a4389ed22e78580a1f6c2e91776" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e394241be8e7cce54f1d1a146f553b1ca501f904" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f53702fd08003f09fa747fb9d03796c9100a308c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe3bd0351f69f3dfd5d34b4b4ba41e1a6e63b2ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0c4aba5a8e3b0b82626d4b61f68f9c9d0d8a2ee6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0f2d4a4d8d7d248d116334555b09f3fc93fce53e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0fb5cf8be5c0a428f797743389284f2fb82e05bd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/1/11a6ee006732cd8265bc24d44a22e965672c7017" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/6/16217a5c57638edac841b99fbb239c7d85959efd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/c/1c783008b473b192d80cc12efaf1d9477b02de0b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1d632ff005bf10344d2235cea385dd1f7077a930" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2e86c7cc442dfc19484413c09db7c68fe0f99997" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/f/2f17d9a6f2b10261367e7d3e7f0a914ed313d4dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/7/37cabea2c882cf80b1a8b4cd8d7c817475832d98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3da522edd9bc1b8b2eaf7fcb453bdecc2cbfee01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3daf2e771a6641715da47b5d1123aeab0c957b05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/e/3ed5cbb8676362aa1b1b012a290123e99b2c1fa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/1/41ae35f376757ff227c2ba9c936ccc4f253a43d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/7/4781ef63335a0b4b0350c7f093438acfe919d5dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/b/4b260e7de7df7f867d1611a2fde7ce4ab635ab2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/d/4df9bbb0f9ee56f44082fb748fac5471834fd1f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/8/68ebe1106c9acdd05ce2be8023b798e311815a85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/9/69baa1c0ec9c67f922bd32687ec498dc4cf101e2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/5/750c98c1649ef30a621344395197ab0fb7f75156" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/5/756b807c6bfc44eecb68376e48f14cebd9314cdd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/8/78e69034534cf0c0b984f5f435c015a2a32620e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/8/78f746ed8e9e8f0d7e7b656c9c02e248eb471385" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e3f1872a54a15d951599771ddf803416a00ba78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/0/8093c3630edb8dc1cf8e689f9f230614a3587941" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8cba74c1226028aeb4220458f0430134ec665ce1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/94540cb3225b07293a97d480a1c54fbfd78fb7a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/9905b0e23707c458ff74edae86a9990062dce4fc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/992647ca0372f1ab14b4bca1032ac5aa9f0c59eb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/99c10a88a83b373734ed60fab7360d7085ac4fa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/b/9b35930d22f259943c89dc5ca139a780a37262d5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fb8646f016dd03ea2b2c31404fee972581704b7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/4/a41db9accd5aca2abc53457e10ba3d6ef9f5c38f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/5/a5cc2925ca8258af241be7e5b0381edf30266302" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/7/a72b4a099a8b1c799b4de8bc6250a972a3175dcc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/5/b5c18f37e9212adee4d45e5ab3dc24e427969149" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/5/b5c69d962ede0bede93bb757dfd41f6813e1a715" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/6/b6f44d56a238012e9729e0a84dcb2b3362b57ad4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bbe4401d224755e6cbd57f441a911b30e71c9fdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/1/c15385fe9285a4282193aa73e946e7c37079e611" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/3/c399bb24e97689e31144e76e939c292bb9f98928" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/e/cea32bd63943d7b42ce44aed1b12953051759f46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5d8e4be563a244817a5622ce6de9f97a222e1b8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5e99ae627f8420d7ed74f7bb6f8ded07abd3a44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/8/d8b8f36b389cc5a6a25b43bf27c540be45108652" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/dba9246959f310d8cb2a5e9583350c259a233a4c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/2/e276e0b991243a4389ed22e78580a1f6c2e91776" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e394241be8e7cce54f1d1a146f553b1ca501f904" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/5/f53702fd08003f09fa747fb9d03796c9100a308c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fe3bd0351f69f3dfd5d34b4b4ba41e1a6e63b2ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/T0001.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/boj/모의테스트4주차_KAUPC대비/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/boj/모의테스트4주차_KAUPC대비/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/boj/모의테스트4주차_KAUPC대비/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/boj/모의테스트4주차_KAUPC대비/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/boj/모의테스트4주차_KAUPC대비/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/codetree/자료구조_중급/linkedList/배열에서_자리바꾸기.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/codetree/자료구조_중급/linkedList/배열에서_자리바꾸기.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1688082204" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/TES-12" />
+                    <option name="lastUsedInstant" value="1688082203" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/java/jdk-17/lib/src.zip!/java.base/java/lang/Integer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/java/jdk-17/lib/src.zip!/java.base/java/util/StringTokenizer.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.17/lib/src.zip!/java.base/java/io/BufferedReader.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.17/lib/src.zip!/java.base/java/io/Reader.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.17/lib/src.zip!/java.base/java/lang/NullPointerException.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.17/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2QUkGLsxXS6a0jZJ3m4UHcRibFK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HwangTaeyeon/Desktop/hwangz/workspace/repositories/algorithms/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HwangTaeyeon\Desktop\hwangz\workspace\repositories\algorithms\solved\src\코드트리\완전탐색\시뮬레이션" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="dfs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="연결리스트1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="코드트리.자료구조_중급.linked_list.연결리스트1" />
+      <module name="cp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="코드트리.자료구조_중급.linked_list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="연결리스트1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="코드트리.자료구조_중급.linked_list.연결리스트1" />
+      <module name="cp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="코드트리.자료구조_중급.linked_list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-249ae16d76d6-d0fa0211" />
+        <option value="jdk-11.0.21-corretto-11.0.21-8336523bb0d9-d3b62f98" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53ea5540-583d-482d-9e71-0ea69756e3b6" name="Changes" comment="" />
+      <created>1685415451160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685415451160</updated>
+      <workItem from="1685415452381" duration="95000" />
+      <workItem from="1688078942471" duration="4018000" />
+      <workItem from="1688101561684" duration="9576000" />
+      <workItem from="1688114504078" duration="652000" />
+      <workItem from="1688121435670" duration="438000" />
+      <workItem from="1688171780982" duration="4224000" />
+      <workItem from="1688217977422" duration="29000" />
+      <workItem from="1688218871530" duration="103000" />
+      <workItem from="1688345000080" duration="12227000" />
+      <workItem from="1688431026388" duration="19541000" />
+      <workItem from="1688473956885" duration="19000" />
+      <workItem from="1688824594170" duration="7531000" />
+      <workItem from="1688864473789" duration="3442000" />
+      <workItem from="1688905244470" duration="67000" />
+      <workItem from="1688974586819" duration="698000" />
+      <workItem from="1688988139841" duration="634000" />
+      <workItem from="1689001946240" duration="4253000" />
+      <workItem from="1689031390730" duration="10534000" />
+      <workItem from="1689095835366" duration="355000" />
+      <workItem from="1689122867120" duration="9806000" />
+      <workItem from="1689172867427" duration="1398000" />
+      <workItem from="1689206774340" duration="8050000" />
+      <workItem from="1689259841759" duration="4457000" />
+      <workItem from="1689293077969" duration="8246000" />
+      <workItem from="1689313960914" duration="2133000" />
+      <workItem from="1689322186156" duration="2777000" />
+      <workItem from="1689381609664" duration="389000" />
+      <workItem from="1689386435776" duration="4707000" />
+      <workItem from="1689421404018" duration="723000" />
+      <workItem from="1689480785318" duration="20030000" />
+      <workItem from="1689519483213" duration="588000" />
+      <workItem from="1689611815004" duration="557000" />
+      <workItem from="1689643994021" duration="3598000" />
+      <workItem from="1689653661804" duration="2599000" />
+      <workItem from="1689678266838" duration="9598000" />
+      <workItem from="1689694392482" duration="13000" />
+      <workItem from="1689725142253" duration="17226000" />
+      <workItem from="1689767981405" duration="4857000" />
+      <workItem from="1689901657239" duration="19574000" />
+      <workItem from="1689937441298" duration="571000" />
+      <workItem from="1690005958509" duration="5222000" />
+      <workItem from="1690017575632" duration="37000" />
+      <workItem from="1690086643144" duration="4034000" />
+      <workItem from="1690097098068" duration="2880000" />
+      <workItem from="1690115186754" duration="29000" />
+      <workItem from="1690160165889" duration="12536000" />
+      <workItem from="1690243561429" duration="607000" />
+      <workItem from="1690244428218" duration="1045000" />
+      <workItem from="1690245502334" duration="116000" />
+      <workItem from="1690245652800" duration="261000" />
+      <workItem from="1690245927404" duration="25000" />
+      <workItem from="1690245968466" duration="1401000" />
+      <workItem from="1690247819514" duration="43000" />
+      <workItem from="1690247876225" duration="11000" />
+      <workItem from="1690247915306" duration="2979000" />
+      <workItem from="1690279419858" duration="1638000" />
+      <workItem from="1690281132642" duration="90000" />
+      <workItem from="1690281259038" duration="8849000" />
+      <workItem from="1690330878588" duration="13659000" />
+      <workItem from="1690378568454" duration="3395000" />
+      <workItem from="1690504232223" duration="17181000" />
+      <workItem from="1690538571891" duration="10943000" />
+      <workItem from="1690606548356" duration="11979000" />
+      <workItem from="1690629148715" duration="2229000" />
+      <workItem from="1690708762943" duration="8505000" />
+      <workItem from="1690729350290" duration="21000" />
+      <workItem from="1690729391091" duration="155000" />
+      <workItem from="1690761798730" duration="7022000" />
+      <workItem from="1690771681921" duration="3514000" />
+      <workItem from="1690803152186" duration="573000" />
+      <workItem from="1690814958927" duration="134000" />
+      <workItem from="1690884653813" duration="3014000" />
+      <workItem from="1690978228388" duration="26000" />
+      <workItem from="1690979316018" duration="21000" />
+      <workItem from="1691066437509" duration="1048000" />
+      <workItem from="1691241142100" duration="3144000" />
+      <workItem from="1691252205273" duration="496000" />
+      <workItem from="1691291451444" duration="16234000" />
+      <workItem from="1691321169942" duration="986000" />
+      <workItem from="1691456583686" duration="10064000" />
+      <workItem from="1691489041165" duration="5570000" />
+      <workItem from="1691542684542" duration="2585000" />
+      <workItem from="1691546063810" duration="181000" />
+      <workItem from="1691546271269" duration="3878000" />
+      <workItem from="1691580113907" duration="125000" />
+      <workItem from="1691633876500" duration="4440000" />
+      <workItem from="1691713424199" duration="12895000" />
+      <workItem from="1691742471711" duration="315000" />
+      <workItem from="1692513453299" duration="10922000" />
+      <workItem from="1692542796565" duration="64000" />
+      <workItem from="1693267999026" duration="1421000" />
+      <workItem from="1693270650338" duration="1004000" />
+      <workItem from="1693283166190" duration="28000" />
+      <workItem from="1693353709884" duration="7332000" />
+      <workItem from="1694047200320" duration="94000" />
+      <workItem from="1694088076444" duration="65000" />
+      <workItem from="1694390108096" duration="5573000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/정렬/T0005.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/시뮬레이션/dxdy테크닉/이동경로상에_있는_모든_숫자_더하기.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/자료구조_중급/treeSet/문제_추천_시스템1.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/시뮬레이션/공간칠하기/가장작은X찾기.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/겹치지않게_선분고르기.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/solved/src/코드트리/완전탐색/백트래킹/알파벳과_사칙연산.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="30" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="balance" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

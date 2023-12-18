@@ -1,37 +1,0 @@
-
-r
-java:S1104	"PMake grid a static final constant or non-public and provide accessors if needed.(ˆ…Ô¿ûÿÿÿÿ8öÔó›1
-p
-java:S1104"SMake visited a static final constant or non-public and provide accessors if needed.(‰ï­ì8öÔó›1
-o
-java:S1104"RMake answer a static final constant or non-public and provide accessors if needed.(šôæ8öÔó›1
-m
-java:S1104"QMake order a static final constant or non-public and provide accessors if needed.(ªÃ¸!8öÔó›1
-L
-java:S1444	"*Make this "public static grid" field final(ˆ…Ô¿ûÿÿÿÿ8öÔó›1
-J
-java:S1444"-Make this "public static visited" field final(‰ï­ì8öÔó›1
-I
-java:S1444",Make this "public static answer" field final(šôæ8öÔó›1
-G
-java:S1444"+Make this "public static order" field final(ªÃ¸!8öÔó›1
-i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ëœÑ8÷Ôó›1
-u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ö®ë8÷Ôó›1
-?
-java:S2386	"Make this member "protected".(ˆ…Ô¿ûÿÿÿÿ8€Õó›1
-:
-java:S2386"Make this member "protected".(‰ï­ì8©ö›1
-:
-java:S2386"Make this member "protected".(šôæ8åãõ›1
-‰
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8ÿ—ù›1
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ûˆ‚ş8•‚œ1
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×´¹Ùıÿÿÿÿ8†Õó›1
-c
-java:S1126/"AReplace this if-then-else statement by a single return statement.(¯«˜üÿÿÿÿ8‡Õó›1
-P
-java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8¨—÷›1
-S
-java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8¨—÷›1
-X
-java:S1128"6Remove this unused import 'java.util.StringTokenizer'.(ÈÄ¬ñşÿÿÿÿ8¨—÷›1
