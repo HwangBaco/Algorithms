@@ -1,4 +1,4 @@
-package ssafy.날짜2023;
+package ssafy.test.입과시험;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
