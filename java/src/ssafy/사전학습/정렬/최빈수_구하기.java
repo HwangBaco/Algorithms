@@ -1,4 +1,4 @@
-package ssafy.사전학습;
+package ssafy.사전학습.정렬;
 
 import java.io.BufferedReader;
 import java.io.IOException;
