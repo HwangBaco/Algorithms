@@ -1,4 +1,4 @@
-package 코드트리.그래프.BFS;
+package codetree.그래프.BFS;
 
 import java.io.BufferedReader;
 import java.io.IOException;
