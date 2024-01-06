@@ -1,4 +1,4 @@
-package ssafy.사전학습;
+package ssafy.사전학습.그래프;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,9 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class 보급로 {
+    /*
+    * 알고리즘 : 다익스트라
+    * */
     private static int[][] distances;
     private static int[][] weights;
     private static int n;
