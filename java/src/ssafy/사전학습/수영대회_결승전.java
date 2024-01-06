@@ -10,7 +10,6 @@ import java.util.StringTokenizer;
 public class 수영대회_결승전 {
 
     public static int n;
-//    public static boolean[][] visited;
     public static int[][] arr;
     public static int[][] ans;
 
@@ -22,7 +21,6 @@ public class 수영대회_결승전 {
             st = new StringTokenizer(br.readLine());
             n = Integer.parseInt(st.nextToken());
             arr = new int[n][n];
-//            visited = new boolean[n][n];
             ans = new int[n][n];
 
             for (int j = 0; j < n; j++) {
@@ -40,7 +38,11 @@ public class 수영대회_결승전 {
             int endX = Integer.parseInt(st.nextToken());
 
             bfs(new Pair(startY, startX));
-            System.out.println("#" + i + " " + ans[endY][endX]);
+            if (ans[endY][endX] == Integer.MAX_VALUE) {
+                System.out.println("#" + i + " " + -1);
+            } else {
+                System.out.println("#" + i + " " + ans[endY][endX]);
+            }
         }
     }
 
@@ -49,7 +51,6 @@ public class 수영대회_결승전 {
         int[] dy = new int[]{1, 0, -1, 0};
         Queue<Pair> q = new LinkedList<>();
         q.add(start);
-//        visited[start.y][start.x] = true;
         ans[start.y][start.x] = 0;
 
         while (!q.isEmpty()) {
@@ -61,7 +62,6 @@ public class 수영대회_결승전 {
                 int newY = y + dy[i];
                 int newX = x + dx[i];
                 if (canGo(newY, newX)) {
-//                    visited[newY][newX] = true;
                     if (arr[newY][newX] == 2) {
                         int res = ans[y][x] + Math.abs((ans[y][x] % 3) - 2) + 1;
                         if (res > ans[newY][newX]) {
