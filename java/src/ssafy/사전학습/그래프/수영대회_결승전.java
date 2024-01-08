@@ -1,8 +1,9 @@
-package ssafy.사전학습;
+package ssafy.사전학습.그래프;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -37,7 +38,7 @@ public class 수영대회_결승전 {
             int endY = Integer.parseInt(st.nextToken());
             int endX = Integer.parseInt(st.nextToken());
 
-            bfs(new Pair(startY, startX));
+            bfs(new Node(startY, startX));
             if (ans[endY][endX] == Integer.MAX_VALUE) {
                 System.out.println("#" + i + " " + -1);
             } else {
@@ -46,15 +47,15 @@ public class 수영대회_결승전 {
         }
     }
 
-    public static void bfs(Pair start) {
+    public static void bfs(Node start) {
         int[] dx = new int[]{0, 1, 0, -1};
         int[] dy = new int[]{1, 0, -1, 0};
-        Queue<Pair> q = new LinkedList<>();
+        Queue<Node> q = new LinkedList<>();
         q.add(start);
         ans[start.y][start.x] = 0;
 
         while (!q.isEmpty()) {
-            Pair now = q.poll();
+            Node now = q.poll();
             int y = now.y;
             int x = now.x;
 
@@ -75,7 +76,7 @@ public class 수영대회_결승전 {
                         }
                         ans[newY][newX] = res;
                     }
-                    q.add(new Pair(newY, newX));
+                    q.add(new Node(newY, newX));
                 }
             }
         }
@@ -89,12 +90,13 @@ public class 수영대회_결승전 {
         return inRange(y, x) && arr[y][x] != 1;
     }
 
-    public static class Pair {
+    public static class Node {
         int x, y;
 
-        public Pair(int y, int x) {
+        public Node(int y, int x) {
             this.y = y;
             this.x = x;
         }
     }
+
 }
