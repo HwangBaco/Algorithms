@@ -9,6 +9,8 @@ import java.util.StringTokenizer;
 
 public class BOJ1922 {
 
+    // 알고리즘 : 크루스칼
+
     public static int[] parent;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
