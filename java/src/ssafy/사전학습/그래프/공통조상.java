@@ -1,4 +1,4 @@
-package ssafy.사전학습;
+package ssafy.사전학습.그래프;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class 공통조상 {
+    /*
+    * 알고리즘 : 유니온파인드 + dfs
+    * */
     public static int[] parent;
     public static int n, m;
     public static List<Integer> aList;
@@ -39,7 +42,7 @@ public class 공통조상 {
             aList = new ArrayList<>();
             bList = new ArrayList<>();
 
-            // commonRoot (ing)
+            // commonRoot (fin)
             findRoot(targetA, aList);
             findRoot(targetB, bList);
             int aListSize = aList.size();
