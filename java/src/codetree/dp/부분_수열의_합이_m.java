@@ -1,4 +1,4 @@
-package codetree.동적계획법;
+package codetree.dp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,8 +14,10 @@ public class 부분_수열의_합이_m {
         * 수열 A의 부분 수열 내 원소의 합이 m이 되는 경우 중 가능한 최소 수열의 길이는?
         * (순서 중요)
         *
+        * 가장 중요한 아이디어는, 중복되지 않도록 dp를 수행하기 위해 tabulation이 아니라 memoization으로 한다는 것.
+        *
         * dp[i] : 수열 내 원소의 합이 i가 되는 경우 중 가능한 최소 수열의 길이
-        * if (li.get(j) + i == m):
+        * if (sum >= arr[i]): // 연산이 가능한 경우
         *   dp[i] = Math.min(dp[i], dp[i - li.get(j)] + 1)
         *
         * */

@@ -1,9 +1,8 @@
-package codetree.동적계획법;
+package codetree.dp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 동전_거슬러주기 {
