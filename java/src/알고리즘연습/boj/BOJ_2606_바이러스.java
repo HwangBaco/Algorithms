@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_2606 {
+public class BOJ_2606_바이러스 {
     /*
     * 시간 : DFS 124ms, BFS 132ms
     * 메모리 : DFS 14292kb, BFS 14272kb
     * 로직 : graph size 구하는 문제여서, 일단 dfs로 먼저 풀고, bfs로도 해 봤습니다.
     * */
-    
+
     static List<Integer>[] adj;
     static boolean[] visited;
     static int graphSize;
