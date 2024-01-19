@@ -7,6 +7,11 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class BOJ_20125_쿠키의신체측정 {
+    /*
+    * 시간 : 400ms
+    * 메모리 : 70184KB
+    * 로직 : 머리 찾고, 머리 바로 아래를 심장으로 지정 -> 심장 기준으로 재귀로 팔다리몸통 길이측정
+    * */
     static int n;
     static String[][] arr;
     static final int Y = 0;
