@@ -3,6 +3,7 @@ package 알고리즘연습.swea.사전학습.그래프;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -67,7 +68,6 @@ public class 보급로 {
     private static boolean inRange(int y, int x) {
         return y >= 0 && y < n && x >= 0 && x < n;
     }
-
     private static class Pair implements Comparable<Pair> {
         private int dist;
         private int[] node;
