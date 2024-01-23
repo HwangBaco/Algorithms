@@ -8,13 +8,23 @@ import java.util.*;
 public class BOJ_2784_가로세로퍼즐 {
     static List<String> allWords = new ArrayList<>();
     static List<String> selectedWords = new ArrayList<>();
-    static Map<Integer, Boolean> selected = new HashMap<>(); // 이것만 바꾸면 되는데... 흠 / 구분이 안되고 있음 / 문자열을 구분하기 위해
+    static Map<Integer, Boolean> selected = new HashMap<>();
     static Queue<String> possiblePuzzles = new PriorityQueue<>();
     static final int FRONT = 0;
     static final int MID = 1;
     static final int BACK = 2;
 
     public static void main(String[] args) throws IOException {
+        /*
+        * 알고리즘 : 재귀 브루트포스
+        * time complexity : O(2^N); 여기서 N은 6으로 고정
+        * 실행 시간 : 148 ms
+        * 메모리 : 14632 KB
+        *
+        * 로직 : 냅다 단어 3개 골라서 만들어보고, 낱말 퍼즐 성립하는지 비교하여 출력. 이 때 중복되면 사전 순으로 출력해야 하므로 정답 문자열을 우선순위 큐(최소힙)에 보관하여 관리
+        * 문자열에 대하여 중복 선택을 방지하기 위해 해시맵으로 방문 여부 체크, 그 외 조건 체크시 단어 리스트 깊은 복사 해서 하나하나 제거하면서 체크하여 여지 없도록 확인
+        * */
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // init
@@ -68,28 +78,26 @@ public class BOJ_2784_가로세로퍼즐 {
         StringBuffer front = new StringBuffer();
         StringBuffer mid = new StringBuffer();
         StringBuffer back = new StringBuffer();
-        int cnt = 6;
+
+        // deep copy
         ArrayList<String> copyList = new ArrayList<>();
         allWords.stream().forEach(copyList::add);
+
         for (String selectedWord : selectedWords) {
             front.append(selectedWord.substring(FRONT, FRONT + 1));
             mid.append(selectedWord.substring(MID, MID + 1));
             back.append(selectedWord.substring(BACK, BACK + 1));
             if (copyList.contains(selectedWord)) {
-//                cnt--;
                 copyList.remove(selectedWord);
             }
         }
         if (copyList.contains(front.toString())) {
-//            cnt--;
             copyList.remove(front.toString());
         }
         if (copyList.contains(mid.toString())) {
-//            cnt--;
             copyList.remove(mid.toString());
         }
         if (copyList.contains(back.toString())) {
-//            cnt--;
             copyList.remove(back.toString());
         }
         if (copyList.isEmpty()) {
