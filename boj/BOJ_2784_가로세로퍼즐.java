@@ -52,7 +52,6 @@ public class BOJ_2784_가로세로퍼즐 {
                 for (String selectedWord : selectedWords) {
                     sb.append(selectedWord);
                 }
-
                 possiblePuzzles.add(sb.toString());
                 return;
             }
