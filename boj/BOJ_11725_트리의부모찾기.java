@@ -28,11 +28,11 @@ public class BOJ_11725_트리의부모찾기 {
 
         while (!q.isEmpty()) {
             Integer parent = q.poll();
-            HashSet<Integer> integers = graphM.get(parent);
-            for (Integer integer : integers) {
-                if (parentM.get(integer) == -1) {
-                    q.add(integer);
-                    parentM.put(integer, parent);
+            HashSet<Integer> edges = graphM.get(parent);
+            for (Integer e : edges) {
+                if (parentM.get(e) == -1) {
+                    q.add(e);
+                    parentM.put(e, parent);
                 }
             }
         }
