@@ -1,9 +1,14 @@
 package 알고리즘연습;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileAutoMigration {
     private static final String localRepoPath = "C:\\Users\\HwangTaeyeon\\Desktop\\hwangz\\workspace\\repositories\\ps-study\\java-coding-test-study";
+    private static final String USER_NAME = "황제철";
+    private static final String PROBLEM_TYPE = "BOJ";
+
     public static void main(String[] args) throws IOException {
         BufferedReader br;
 
@@ -35,7 +40,7 @@ public class FileAutoMigration {
         * fileName generation
         * */
         String fileName = new StringBuffer()
-                .append("BOJ_")
+                .append(PROBLEM_TYPE+"_")
                 .append(problemNumber)
                 .append("_")
                 .append(problemName)
@@ -53,7 +58,7 @@ public class FileAutoMigration {
         * commit message generation
         * */
         String commitMessage = new StringBuffer()
-                .append("[BOJ]")
+                .append("[" + PROBLEM_TYPE + "]")
                 .append(problemNumber)
                 .append("/")
                 .append(problemTier)
@@ -62,7 +67,7 @@ public class FileAutoMigration {
                 .append("/")
                 .append(solvingTime)
                 .append("/")
-                .append("황제철")
+                .append(USER_NAME)
                 .toString();
 
         /*
@@ -74,7 +79,7 @@ public class FileAutoMigration {
     }
 
     private static void migrate(String fileName) {
-        String sourcePath = ".\\boj\\" + fileName + ".java";
+        String sourcePath = ".\\" + PROBLEM_TYPE.toLowerCase() + "\\" + fileName + ".java";
         File sourceFile = new File(sourcePath);
         String destPath = localRepoPath + "\\Jecheol_Hwang\\" + fileName + ".java";
         File destFile = new File(destPath);
@@ -85,7 +90,6 @@ public class FileAutoMigration {
             while ((length = inputStream.read()) > 0) {
                 outStream.write(length);
             }
-
             System.out.println("파일이 성공적으로 복사되었습니다.");
         } catch (IOException e) {
             e.printStackTrace();
