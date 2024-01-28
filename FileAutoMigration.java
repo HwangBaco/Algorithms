@@ -9,55 +9,70 @@ public class FileAutoMigration {
     private static final String USER_NAME = "황제철";
     private static final String PROBLEM_TYPE = "BOJ";
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br;
+    private static BufferedReader br;
 
+    public static void main(String[] args) throws IOException {
         /*
         * input problem description
         * */
-        System.out.print("백준 문제 '번호'를 입력하세요 : ");
-        br = new BufferedReader(new InputStreamReader(System.in));
-        String problemNumber = br.readLine();
-        System.out.println();
-        System.out.print("백준 문제 '이름'을 입력하세요 : ");
-        br = new BufferedReader(new InputStreamReader(System.in));
-        String problemName = br.readLine();
-        System.out.println();
-        System.out.print("백준 문제 '티어'을 입력하세요 : ");
-        br = new BufferedReader(new InputStreamReader(System.in));
-        String problemTier = br.readLine();
-        System.out.println();
-        System.out.print("로직 실행 '시간'을 입력하세요 : ");
-        br = new BufferedReader(new InputStreamReader(System.in));
-        String runTime = br.readLine() + "ms";
-        System.out.println();
-        System.out.print("풀이 소요 '시간'을 입력하세요 : ");
-        br = new BufferedReader(new InputStreamReader(System.in));
-        String solvingTime = br.readLine();
-        System.out.println();
+        String problemNumber = inputCommandString("백준 문제 '번호'를 입력하세요 : ");
+
+        String problemName = inputCommandString("백준 문제 '이름'을 입력하세요 : ");
+
+        String problemTier = inputCommandString("백준 문제 '티어'을 입력하세요 : ");
+
+        String runTime = inputCommandString("로직 실행 '시간'을 입력하세요 : ");
+
+        String solvingTime = inputCommandString("풀이 소요 '시간'을 입력하세요 : ");
+
+        long prev = System.nanoTime();
 
         /*
         * fileName generation
         * */
-        String fileName = new StringBuffer()
-                .append(PROBLEM_TYPE+"_")
-                .append(problemNumber)
-                .append("_")
-                .append(problemName)
-                .toString();
+        String fileName = getFileName(problemNumber, problemName);
 
         /*
         * file migration
         * */
-        long prev = System.nanoTime();
         migrate(fileName);  // output : 14961401
-//        migrateByGPT(fileName); // output : 17097599
-        System.out.println("실행시간 : " + (System.nanoTime() - prev));
 
         /*
         * commit message generation
         * */
-        String commitMessage = new StringBuffer()
+        String commitMessage = getCommitMessage(problemNumber, problemTier, runTime, solvingTime);
+
+        /*
+        * push to origin forked repository
+        * */
+        add();
+        commit(commitMessage);
+        push();
+        openGitHubRepository();
+        
+        System.out.println("실행시간 : " + (System.nanoTime() - prev));
+    }
+
+    private static String getFileName(String problemNumber, String problemName) {
+        return new StringBuffer()
+                .append(PROBLEM_TYPE + "_")
+                .append(problemNumber)
+                .append("_")
+                .append(problemName)
+                .toString();
+    }
+
+
+    private static String inputCommandString(String s) throws IOException {
+        System.out.print(s);
+        br = new BufferedReader(new InputStreamReader(System.in));
+        String commandString = br.readLine();
+        System.out.println();
+        return commandString;
+    }
+
+    private static String getCommitMessage(String problemNumber, String problemTier, String runTime, String solvingTime) {
+        return new StringBuffer()
                 .append("[" + PROBLEM_TYPE + "]")
                 .append(problemNumber)
                 .append("/")
@@ -69,13 +84,12 @@ public class FileAutoMigration {
                 .append("/")
                 .append(USER_NAME)
                 .toString();
+    }
 
-        /*
-        * push to origin forked repository
-        * */
-        add();
-        commit(commitMessage);
-        push();
+    private static void openGitHubRepository() throws IOException {
+        Process openRepo = Runtime.getRuntime().exec("explorer \"https://github.com/HwangBaco/java-coding-test-study\"");
+        printStream(openRepo.getInputStream());
+        printStream(openRepo.getErrorStream());
     }
 
     private static void migrate(String fileName) {
