@@ -32,6 +32,7 @@ public class FileAutoMigration {
         * */
         String fileName = getFileName(problemNumber, problemName);
 
+
         /*
         * file migration
         * */
@@ -79,7 +80,7 @@ public class FileAutoMigration {
                 .append(problemTier)
                 .append("/")
                 .append(runTime)
-                .append("/")
+                .append("ms/")
                 .append(solvingTime)
                 .append("/")
                 .append(USER_NAME)
