@@ -17,12 +17,11 @@ public class SWEA_지도칠하기 {
             ans = Integer.MAX_VALUE;
 
             int n = Integer.parseInt(br.readLine());
-            int[] origin = new int[n]; // original array
+            int[] originalColors = new int[n]; // original array
 
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < n; i++) {
-                int num = Integer.parseInt(st.nextToken());
-                origin[i] = num;
+                originalColors[i] = Integer.parseInt(st.nextToken());
             }
             int[] adj = new int[n];
             for (int y = 0; y < n; y++) {
@@ -34,7 +33,7 @@ public class SWEA_지도칠하기 {
                     }
                 }
             }
-            perm(new ArrayList<>(), n, origin, adj);
+            perm(new ArrayList<>(), n, originalColors, adj);
 
             System.out.printf("#%d %d\n", tc, ans);
         }
@@ -45,20 +44,19 @@ public class SWEA_지도칠하기 {
             int res = 0;
             if (noProblem(n, li, origin, adj)) {
                 for (int i = 0; i < n; i++) {
-                    res += (li.get(i) & origin[i]) == origin[i] ? 0 : 1;
+                    res += (li.get(i) == origin[i]) ? 0 : 1;
                 }
                 ans = Math.min(ans, res);
             }
             return;
         }
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= 4; i++) {
             li.add(i);
             perm(li, n, origin, adj);
             li.remove(li.size() - 1);
         }
     }
-
 
     private static boolean noProblem(int n, ArrayList<Integer> li, int[] origin, int[] adj) {
         for (int i = 0; i < n; i++) {
@@ -66,7 +64,7 @@ public class SWEA_지도칠하기 {
             int adjBit = adj[i];
 
             for (int j = 0; j < n; j++) {
-                if ((adjBit & 1 << j) != 0 && (permedColor ^ origin[j]) == 0) {
+                if ((adjBit & 1 << j) != 0 && (permedColor == li.get(j))) {
                     return false;
                 }
             }
