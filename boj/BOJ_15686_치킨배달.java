@@ -58,14 +58,18 @@ public class BOJ_15686_치킨배달 {
             }
             ans = Math.min(ans, sum);
         }
-        for (int i = depth; i < chickens.size(); i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                selected.add(chickens.get(i));
-                comb(depth + 1, cnt + 1, m, visited);
-                visited[i] = false;
-                selected.remove(selected.size() - 1);
-            }
+
+        if (depth == chickens.size()) {
+            return;
+        }
+
+        if (!visited[depth]) {
+            visited[depth] = true;
+            selected.add(chickens.get(depth));
+            comb(depth+1, cnt+1, m, visited);
+            visited[depth] = false;
+            selected.remove(selected.size() - 1);
+            comb(depth+1, cnt, m, visited);
         }
 
     }
