@@ -1,29 +1,55 @@
 package 알고리즘연습.boj;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class BOJ_10971_외판원순회2 {
+    static int n;
+    static int ans = (int) 1e9;
+    static int visited;
+    static int[][] adj;
     public static void main(String[] args) throws IOException {
-        /**
-         * 문제 :
-         * - 1번부터 n번의 도시 (2이상 10 이하)
-         * - 각 도시 사이에 길이 있을수도, 없을수도
-         * - 외판원이 한 도시에서 출발해 n개의 도시를 모두 거쳐 다시 원래의 도시로 돌아오는 순회 경로 계획
-         * - 도시 중복 불가
-         *
-         * - 각 도시간 weight는 인접 행렬로 제공 (1백만 이하의 자연수)
-         * - 단방향 행렬
-         * - 최소 비용 계획
-         */
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        adj = new int[n][n];
 
-        /**
-         * 기본적으로 모든 노드는 최소 2개의 노드와 연결되어 있음
-         *
-         * 첫 번째 노드를 일단 하나 고르고,
-         * 첫 번째 노드와 인접한 노드를 하나 고름.
-         * 첫 번째 노드와 인접 노드를 제외한 다른 노드들의 순열을 고르는데, bfs로 진행하는데 모든 노드를 탐색해야 함.
-         */
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < n; j++) {
+                adj[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
 
-        
+        for (int i = 0; i < n; i++) {
+            visited |= 1 << i;
+            go(i, i, 1, 0); // 출발 노드 순회
+            visited &= ~(1 << i);
+        }
+
+        System.out.println(ans);
+    }
+
+    private static void go(int start, int now, int cnt, int res) {
+        if (cnt == n) {
+            if (adj[now][start] > 0) {
+                res += adj[now][start];
+                ans = Math.min(ans, res);
+            }
+            return;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if ((visited & 1 << i) != 0 || adj[now][i] == 0) {
+                continue;
+            }
+            res += adj[now][i];
+            visited |= 1 << i;
+            go(start, i, cnt + 1, res);
+            res -= adj[now][i];
+            visited &= ~(1 << i);
+        }
     }
 }
