@@ -24,7 +24,7 @@ public class BOJ_2630_색종이만들기 {
                 ps[i][j] = num + ps[i-1][j] + ps[i][j-1] - ps[i-1][j-1];
             }
         }
-        
+
         // 색종이 검사
         go(0, n);
 
@@ -62,6 +62,6 @@ public class BOJ_2630_색종이만들기 {
             }
         }
         go(depth + 1, n);
-        
+
     }
 }

@@ -3,9 +3,6 @@ package 알고리즘연습.boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-import java.util.stream.Stream;
 
 public class BOJ_3040_백설공주와일곱난쟁이 {
     static short ans;
