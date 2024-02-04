@@ -16,10 +16,12 @@ import java.util.StringTokenizer;
  * 2. 중복조합
  * - 판단 근거 : 격자상 이동 방식에 따라 visited를 검사할 이유가 없으니 이동 방향들의 조합으로 풀 수 있을 것으로 봤습니다.
  * - 시간복잡도 : O(NM); 중복조합 nHr == (n + r - 1) C (r) 이므로 (n + r - 1)! / (n - 1)! * (r)! 입니다.
+ * - 실행 시간 : 160 ms
  *
  * 3. DP
  * - 판단 근거 : 점화식이 간단할 것 같았고, 경로가 매 회마다 누적되는 느낌이니 DP로 가능할 것으로 봤습니다.
  * - 시간복잡도 : O(NM); 2차원 loop 돌면서 dp matrix tabulation
+ * - 실행 시간 : 128 ms
  */
 public class BOJ_10164_격자상의경로 {
     private static int n, m, k, ky, kx;
