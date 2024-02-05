@@ -1,6 +1,9 @@
 package 알고리즘연습.programmers;
 
 public class PGS_수레움직이기 {
+    /*
+    * 완탐; 백트래킹
+    * */
     class Solution {
         boolean redEnd = false;
         boolean blueEnd = false;
@@ -14,6 +17,7 @@ public class PGS_수레움직이기 {
 
         public class Pair {
             int x, y;
+
             public Pair(int y, int x) {
                 this.y = y;
                 this.x = x;
@@ -46,34 +50,34 @@ public class PGS_수레움직이기 {
         }
 
         private boolean canGo(Pair cntRed, Pair red,
-                              Pair cntBlue, Pair blue){
+                              Pair cntBlue, Pair blue) {
             // inRange && no wall
-            if(red.x < 0 || red.y < 0 || red.x >= m || red.y >= n
+            if (red.x < 0 || red.y < 0 || red.x >= m || red.y >= n
                     || blue.x < 0 || blue.y < 0 || blue.x >= m || blue.y >= n
                     || arr[red.y][red.x] == 5 || arr[blue.y][blue.x] == 5) {
                 return false;
             }
 
             // no switch position
-            if((cntRed.x == blue.x && cntRed.y == blue.y)
+            if ((cntRed.x == blue.x && cntRed.y == blue.y)
                     && (cntBlue.x == red.x && cntBlue.y == red.y)) {
                 return false;
             }
 
             // no duplicate visit 'til on dest
-            if((!redEnd && visited[RED][red.y][red.x])
+            if ((!redEnd && visited[RED][red.y][red.x])
                     || (!blueEnd && visited[BLUE][blue.y][blue.x])) {
                 return false;
             }
             // no same spot
-            if(red.x == blue.x && red.y == blue.y) {
+            if (red.x == blue.x && red.y == blue.y) {
                 return false;
             }
             return true;
         }
 
         public int go(Pair red, Pair blue, int result) {
-            if  (redEnd && blueEnd) {
+            if (redEnd && blueEnd) {
                 return result;
             }
 
@@ -98,7 +102,7 @@ public class PGS_수레움직이기 {
                     redEnd = (arr[nRed.y][nRed.x] == 3) ? true : false;
                     blueEnd = (arr[nBlue.y][nBlue.x] == 4) ? true : false;
 
-                    answer = Math.min(answer, go(nRed, nBlue, result+1));
+                    answer = Math.min(answer, go(nRed, nBlue, result + 1));
 
                     visited[RED][nRed.y][nRed.x] = false;
                     visited[BLUE][nBlue.y][nBlue.x] = false;
