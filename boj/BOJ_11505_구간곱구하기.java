@@ -51,7 +51,6 @@ public class BOJ_11505_구간곱구하기 {
             }
         }
         System.out.println(sb);
-
     }
 
     public static long init(int node, int start, int end) {
