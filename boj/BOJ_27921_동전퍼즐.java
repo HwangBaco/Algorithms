@@ -6,12 +6,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BOJ_27921_동전퍼즐 {
-    /*
-    * 시간복잡도 : O(N^4) ; N이 최대 10이여서 가능했습니다...
-    *
-    * 실행 시간 : 124 ms
-    * 사용 메모리 : 14276 KB
-    * */
     public static void main(String[] args) throws IOException {
         int[] arr = new int[30];
         int[] brr;
