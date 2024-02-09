@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BOJ_배열돌리기1 {
+public class BOJ_16926_배열돌리기1 {
     private static int N, M, R;
     private static int[][] arr;
     public static void main(String[] args) throws IOException {

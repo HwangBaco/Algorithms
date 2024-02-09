@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
 
-public class CodeTree_코드트리오마카세 {
+public class 못풂_나중에다시_코드트리오마카세 {
     /*
     * 틀림
     * */
