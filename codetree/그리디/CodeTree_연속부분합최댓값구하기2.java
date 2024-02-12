@@ -1,4 +1,4 @@
-package 알고리즘연습.codetree;
+package 알고리즘연습.codetree.그리디;
 
 import java.io.BufferedReader;
 import java.io.IOException;
