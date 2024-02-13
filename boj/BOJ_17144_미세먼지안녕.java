@@ -4,7 +4,15 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class BOJ_17144_미세먼지안녕 {
+    /**
+     * 실행시간 : 468 ms
+     *
+     * 메모리 : 38088 KB
+     *
+     * 시간복잡도 : O(T * R * C) ; 최대 250_000
+     */
     static int R, C, T;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -94,7 +102,7 @@ public class BOJ_17144_미세먼지안녕 {
 
             // 오른쪽면
             for (int i = 0; i < upAcRow; i++) {
-                temp[i][C-1] = temp[i+1][C-1];
+                temp[i][C - 1] = temp[i + 1][C - 1];
             }
 
             // 아랫면 (공기청정기 전 2번째 칸까지 이동)
@@ -109,7 +117,7 @@ public class BOJ_17144_미세먼지안녕 {
 
             // 왼쪽면
             for (int i = downAcRow + 1; i < R - 1; i++) {
-                temp[i][0] = temp[i+1][0];
+                temp[i][0] = temp[i + 1][0];
             }
 
             // 아랫면
