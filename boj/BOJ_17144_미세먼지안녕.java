@@ -132,7 +132,7 @@ public class BOJ_17144_미세먼지안녕 {
             temp[downAcRow][0] = 0;
             temp[downAcRow][1] = 0;
 
-            grid = temp;
+            System.arraycopy(temp, 0, grid, 0, temp.length);
         }
 
         int sum = 0;
