@@ -25,14 +25,23 @@ public class BOJ_17144_미세먼지안녕 {
 
         int[][] grid = new int[r][c];
 
+        int upAcRow = -1;
+        int downAcRow = -1;
         for (int i = 0; i < r; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < c; j++) {
                 grid[i][j] = Integer.parseInt(st.nextToken());
+                if (grid[i][j] == -1) {
+                    if (upAcRow == -1) {
+                        upAcRow = i;
+                    } else {
+                        downAcRow = i;
+                    }
+                }
             }
         }
 
-        String ans = solution(r, c, t, grid);
+        String ans = solution(r, c, t, grid, upAcRow, downAcRow);
 
         bw.write(ans);
 
@@ -41,7 +50,7 @@ public class BOJ_17144_미세먼지안녕 {
         bw.close();
     }
 
-    private static String solution(int r, int c, int t, int[][] grid) {
+    private static String solution(int r, int c, int t, int[][] grid, int upAcRow, int downAcRow) {
         R = r;
         C = c;
         T = t;
@@ -50,21 +59,6 @@ public class BOJ_17144_미세먼지안녕 {
         int[] dx = {0, 0, -1, 1};
 
 
-        // 공기청정기 위치 저장
-        int upAcRow = -1;
-        int downAcRow = -1;
-        for (int i = 0; i < R; i++) {
-            for (int j = 0; j < C; j++) {
-                if (grid[i][j] == -1) {
-                    if (upAcRow == -1) {
-                        upAcRow = i;
-                    } else {
-                        downAcRow = i;
-                        break;
-                    }
-                }
-            }
-        }
 
         int[][] temp;
         for (int time = 0; time < T; time++) {
