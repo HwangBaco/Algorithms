@@ -3,87 +3,52 @@ package 알고리즘연습.swea.알고리즘수업;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class SWEA_나무높이 {
+    /*
+     * 인근 천재의 풀이 참고함
+     * */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
-        for (int t = 1; t <= T; t++) {
+        for (int tc = 0; tc < T; tc++) {
             int n = Integer.parseInt(br.readLine());
             StringTokenizer st = new StringTokenizer(br.readLine());
-            LinkedList<Integer> li = new LinkedList<>();
-
+            int[] arr = new int[n];
             int max = -1;
-            int min = (int) 1e9;
             for (int i = 0; i < n; i++) {
                 int num = Integer.parseInt(st.nextToken());
+                arr[i] = num;
                 max = Math.max(max, num);
-                min = Math.min(min, num);
-                li.add(num);
             }
 
-            if (max == min) {
-                System.out.printf("#%d %d\n", t, 0);
-                continue;
-            }
-
-            int i = li.indexOf(max);
-            Integer maxHeight = li.get(i);
-
-            List<Integer> arr = new ArrayList<>();
-            for (Integer integer : li) {
-                if (integer == maxHeight) {
+            int total = 0;
+            int totalOddCnt = 0;
+            for (int i : arr) {
+                if (i == max) {
                     continue;
                 }
-                arr.add(maxHeight - integer);
+                int sub = max - i;
+                total += sub;
+                totalOddCnt += sub % 2;
             }
 
-            int ans = 0;
-            int oneCnt = 0;
-            int twoCnt = 0;
-            for (Integer h : arr) {
-//                System.out.println(h);
-                ans += (h / 3) * 2;
-//                System.out.println(ans);
-                int mod = h % 3;
-                if (mod == 1) {
-                    oneCnt++;
-                } else if (mod == 2) {
-                    twoCnt++;
-                }
-            }
-//            System.out.println(oneCnt + " " + twoCnt);
-            if (oneCnt > 0 && twoCnt == 0) {
-                ans += oneCnt * 2 - 1;
-            } else if (twoCnt > 0 && oneCnt == 0) {
-                int res = twoCnt / 3;
-                int mod = twoCnt % 3;
-                if (mod > 0) {
-                    mod++;
-                }
-                ans += res * 4 + mod;
-            } else if (oneCnt > 0 && twoCnt > 0) {
-                if (oneCnt >= twoCnt) {
-                    ans += twoCnt * 2;
-                    ans += (oneCnt - twoCnt) * 2 - 1;
-                } else {
-                    ans += oneCnt * 2;
-                    int diff = twoCnt - oneCnt;
-                    int res = diff / 3;
-                    int mod = diff % 3;
-                    if (mod > 0) {
-                        mod++;
-                    }
-                    ans += res * 4 + mod;
-                }
-            }
+            // 1,2,1,2, ... 이상적으로 자라는 경우
+            int res = ((total / 3) << 1) + (total % 3);
 
-            System.out.printf("#%d %d\n", t, ans);
+            int resOddCnt = res / 2 + res % 2; // 이상적으로 자랐을 때의 1 개수
 
+            if (resOddCnt >= totalOddCnt) {
+                System.out.printf("#%d %d\n", tc, res);
+                continue;
+            }
+            /*
+            * 만약 전체 카운트 중 홀수의 개수가 이상적인 경우의 홀수 카운트보다 많을 경우
+            * 즉, 격일로 자라야 하는 경우에는 어차피 2일에 하나 처리해야 하니까 2인 애들은 알아서 홀수 사이 공간에 껴서 크는거니까 홀수만 신경쓰면 됨.
+            * */
+            System.out.printf("#%d %d\n", tc, (totalOddCnt * 2 - 1));
         }
+
     }
 }

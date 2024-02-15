@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.stream.Stream;
 
-public class SWEA_9229_한빈이와SpotMart {
+public class SWEA_한빈이와SpotMart {
     /*
     * DP?
     *
