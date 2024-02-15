@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class SWEA_상호의배틀필드 {
+    /*
+    * 실행 시간 : 210 ms
+    *
+    * 메모리 : 33,872 KB
+    * */
     private static final String LAND = ".";
     private static final String BRICK_WALL = "*";
     private static final String IRON_WALL = "#";
