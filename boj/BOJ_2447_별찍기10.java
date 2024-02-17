@@ -26,27 +26,19 @@ public class BOJ_2447_별찍기10 {
     }
 
     private static void go(int r, int c, int n) {
-        int size = n * n / 9;
         int first = n / 3;
-        int second = n / 3;
+        int second = n / 3 * 2;
+        int nn = n / 3;
 
-        if (r < first) {
-            if (size == 1) {
-                sb.append("*");
-            }
-
-        } else if (r < second && c < first) {
-            if (size == 1) {
-                sb.append("*");
-            }
-        } else if (r < second && c < second) {
-            if (size == 1) {
-                sb.append(" ");
-            }
+        if (r > first && r <= second && c > first && c <= second) {
+            sb.append(" ");
         } else {
-            if (size == 1) {
+            if (n / 3 == 1) {
+
                 sb.append("*");
+                return;
             }
+            go(r % nn, c % nn, nn);
         }
     }
 }
