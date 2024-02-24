@@ -10,8 +10,9 @@ import java.util.StringTokenizer;
 
 /**
  * @author HwangBaco
- * @algorithm
- * @time 입력
+ * @algorithm kruskal
+ * @time O(M * logM) ; 모든 간선 정렬 O(M * logM) + 각 간선에 대한 union-find O(E * logN)
+ *
  * N : 노드의 개수 (2이상 100,000이하)
  * M : 간선의 개수 (1이상 1,000,000이하)
  */
