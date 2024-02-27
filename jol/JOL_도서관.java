@@ -3,7 +3,7 @@ package 알고리즘연습.jol;
 import java.io.*;
 import java.util.*;
 
-public class JOL_2247_도서관 {
+public class JOL_도서관 {
     static final int START = 0;
     static final int END = 1;
     public static void main(String[] args) throws IOException {
