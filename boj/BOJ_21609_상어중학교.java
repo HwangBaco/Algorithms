@@ -46,22 +46,22 @@ public class BOJ_21609_상어중학교 {
         bw.close();
     }
 
-    private static void print() {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.print(map[i][j] == BLANK ? "B " : map[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    private static void print() {
+//        for (int i = 0; i < N; i++) {
+//            for (int j = 0; j < N; j++) {
+//                System.out.print(map[i][j] == BLANK ? "B " : map[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
     /**
      * 블록 그룹이 있는지 탐색
      * -> 있으면, 가장 큰 블록 그룹을 터뜨림
      */
     private static boolean bomb() {
-        System.out.println("BOJ_21609_상어중학교.find");
-        print();
+//        System.out.println("BOJ_21609_상어중학교.find");
+//        print();
         // 먼저 배열 순회하면서 블록 그룹 대표 블록을 물색 (우선순위큐 사용)
         PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> { // 대표 블록 담는 큐
             if (o1[0] == o2[0]) {
@@ -87,11 +87,11 @@ public class BOJ_21609_상어중학교 {
         int bombRainbowCnt = -1;
         int bombY = -1;
         int bombX = -1;
-        visited = new boolean[N][N];
         if (pq.isEmpty()) { // 만약 대표 블록이 될 일반 블록이 없는 경우는 -> 오토플레이 불가
             return false;
         }
 
+        visited = new boolean[N][N];
         // PQ에서 하나씩 꺼내서 dfs 돌면서 (사이즈 + 무지개블록 개수) 카운트하고
         while (!pq.isEmpty()) {
             int[] bossBlock = pq.poll(); // 대표 블록 큐
@@ -105,6 +105,7 @@ public class BOJ_21609_상어중학교 {
             if (!visited[y][x]) {
                 rainbowCnt = 0;
                 groupSize = 0;
+                visited[y][x] = true;
                 dfs(y, x, color);
 
                 // 매번 비교하면서 폭파할 블록 선택 (대표블록 y, x 저장/갱신)
@@ -121,13 +122,13 @@ public class BOJ_21609_상어중학교 {
                         bombY = y;
                         bombX = x;
                     } else if (rainbowCnt == bombRainbowCnt) { // 무지개블록 개수도 같으면
-                        if (bombY > y) {
+                        if (bombY < y) {
                             bombGroupSize = groupSize;
                             bombRainbowCnt = rainbowCnt;
                             bombY = y;
                             bombX = x;
                         } else if (bombY == y) {
-                            if (bombX > x) {
+                            if (bombX < x) {
                                 bombGroupSize = groupSize;
                                 bombRainbowCnt = rainbowCnt;
                                 bombY = y;
@@ -145,15 +146,16 @@ public class BOJ_21609_상어중학교 {
         visited = new boolean[N][N];
         if (bombY != -1 && bombX != -1) {
             groupSize = 0;
+            visited[bombY][bombX] = true;
             exec(bombY, bombX, map[bombY][bombX]);
         }
         ans += (int) Math.pow(groupSize, 2);
-        print();
+//        print();
         return true;
     }
 
     private static void exec(int y, int x, int color) {
-        System.out.println("BOJ_21609_상어중학교.exec");
+//        System.out.println("BOJ_21609_상어중학교.exec");
         map[y][x] = BLANK;
         groupSize++;
         for (int i = 0; i < 4; i++) {
@@ -195,7 +197,7 @@ public class BOJ_21609_상어중학교 {
      * 배열에 중력을 적용
      */
     private static void gravity() {
-        System.out.println("BOJ_21609_상어중학교.gravity");
+//        System.out.println("BOJ_21609_상어중학교.gravity");
         int[] temp = new int[N];
 
         for (int x = 0; x < N; x++) {
@@ -217,14 +219,14 @@ public class BOJ_21609_상어중학교 {
             }
 
         }
-        print();
+//        print();
     }
 
     /**
      * 배열을 반시계 방향으로 90도 회전시킴
      */
     private static void turnLeft() {
-        System.out.println("BOJ_21609_상어중학교.turnLeft");
+//        System.out.println("BOJ_21609_상어중학교.turnLeft");
         // 단순함. y가 x로 되면 됨.
         int[][] temp = new int[N][N];
         for (int i = 0; i < N; i++) {
@@ -235,7 +237,7 @@ public class BOJ_21609_상어중학교 {
         for (int i = 0; i < N; i++) {
             map[i] = temp[i].clone();
         }
-        print();
+//        print();
     }
 
     private static boolean inRange(int y, int x) {
