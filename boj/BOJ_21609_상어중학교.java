@@ -3,6 +3,11 @@ package 알고리즘연습.boj;
 import java.io.*;
 import java.util.*;
 
+/**
+ * @algorithm simulation
+ * @time O(N^2) -> 196 ms
+ * @memory O(N^2) -> 16132 KB
+ */
 public class BOJ_21609_상어중학교 {
     private static int N, M, ans;
     private static int[][] map;
@@ -33,7 +38,6 @@ public class BOJ_21609_상어중학교 {
         }
 
         while (bomb()) {
-//        bomb();
             gravity();
             turnLeft();
             gravity();
@@ -46,32 +50,17 @@ public class BOJ_21609_상어중학교 {
         bw.close();
     }
 
-//    private static void print() {
-//        for (int i = 0; i < N; i++) {
-//            for (int j = 0; j < N; j++) {
-//                System.out.print(map[i][j] == BLANK ? "B " : map[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
-
     /**
      * 블록 그룹이 있는지 탐색
      * -> 있으면, 가장 큰 블록 그룹을 터뜨림
      */
     private static boolean bomb() {
-//        System.out.println("BOJ_21609_상어중학교.find");
-//        print();
         // 먼저 배열 순회하면서 블록 그룹 대표 블록을 물색 (우선순위큐 사용)
         PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> { // 대표 블록 담는 큐
             if (o1[0] == o2[0]) {
                 return o1[1] - o2[1]; // 열 오름차순 (대표블록은 가장 작은 블록)
             }
             return o1[0] - o2[0]; // 행 오름차순
-//            if (o1[1] == o2[1]) {
-//                return o1[0] - o2[0]; // 열 오름차순 (대표블록은 가장 작은 블록)
-//            }
-//            return o1[1] - o2[1]; // 행 오름차순
         });
 
         for (int i = 0; i < N; i++) {
@@ -150,12 +139,10 @@ public class BOJ_21609_상어중학교 {
             exec(bombY, bombX, map[bombY][bombX]);
         }
         ans += (int) Math.pow(groupSize, 2);
-//        print();
         return true;
     }
 
     private static void exec(int y, int x, int color) {
-//        System.out.println("BOJ_21609_상어중학교.exec");
         map[y][x] = BLANK;
         groupSize++;
         for (int i = 0; i < 4; i++) {
@@ -197,7 +184,6 @@ public class BOJ_21609_상어중학교 {
      * 배열에 중력을 적용
      */
     private static void gravity() {
-//        System.out.println("BOJ_21609_상어중학교.gravity");
         int[] temp = new int[N];
 
         for (int x = 0; x < N; x++) {
@@ -219,14 +205,12 @@ public class BOJ_21609_상어중학교 {
             }
 
         }
-//        print();
     }
 
     /**
      * 배열을 반시계 방향으로 90도 회전시킴
      */
     private static void turnLeft() {
-//        System.out.println("BOJ_21609_상어중학교.turnLeft");
         // 단순함. y가 x로 되면 됨.
         int[][] temp = new int[N][N];
         for (int i = 0; i < N; i++) {
@@ -237,7 +221,6 @@ public class BOJ_21609_상어중학교 {
         for (int i = 0; i < N; i++) {
             map[i] = temp[i].clone();
         }
-//        print();
     }
 
     private static boolean inRange(int y, int x) {
