@@ -28,7 +28,7 @@ import java.util.*;
  */
 public class BOJ_1911_흙길보수하기 {
     private static int N, L;
-    private static long[][] arr;
+    private static int[][] arr;
     private static long ans;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -39,7 +39,7 @@ public class BOJ_1911_흙길보수하기 {
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         L = Integer.parseInt(st.nextToken());
-        arr = new long[N][2];
+        arr = new int[N][2];
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
@@ -50,21 +50,21 @@ public class BOJ_1911_흙길보수하기 {
         // 그리디를 위한 정렬
         Arrays.sort(arr, Comparator.comparingLong(o -> o[0]));
 
-        long lastIdx = 0; // 널빤지를 마지막으로 둔 위치
-        for (long[] ptr : arr) {
+        int lastIdx = 0; // 널빤지를 마지막으로 둔 위치
+        for (int[] ptr : arr) {
             // 웅덩이 좌표 [s,e)
-            long s = ptr[0];
-            long e = ptr[1];
+            int s = ptr[0];
+            int e = ptr[1];
 
             // 다시 차곡차곡 쌓으면 되는 경우
             if (s >= lastIdx) {
 //                System.out.println("=========s >= lastIdx============");
                 lastIdx = s;
-                long length = e - s;
+                int length = e - s;
 //                System.out.println("length = " + length);
-                long share = length / L;
+                int share = length / L;
 //                System.out.println("share = " + share);
-                long remainder = length % L;
+                int remainder = length % L;
 //                System.out.println("remainder = " + remainder);
                 ans += share + (remainder > 0 ? 1 : 0); // 널빤지 개수 추가
 //                System.out.println("ans = " + ans);
@@ -72,11 +72,11 @@ public class BOJ_1911_흙길보수하기 {
 //                System.out.println("lastIdx = " + lastIdx);
             } else if (lastIdx < e) { // 중간에 마무리가 된 상태에서 널빤지를 더 깔아야 하는 상황인 경우
 //                System.out.println("=========lastIdx < e============");
-                long length = e - lastIdx;
+                int length = e - lastIdx;
 //                System.out.println("length = " + length);
-                long share = length / L;
+                int share = length / L;
 //                System.out.println("share = " + share);
-                long remainder = length % L;
+                int remainder = length % L;
 //                System.out.println("remainder = " + remainder);
                 ans += share + (remainder > 0 ? 1 : 0); // 널빤지 개수 추가
 //                System.out.println("ans = " + ans);
