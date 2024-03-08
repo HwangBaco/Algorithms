@@ -7,6 +7,10 @@ import java.util.StringTokenizer;
 
 /**
  * @intuition 브루트포스인줄 알았는데, union-find인 것 같다.
+ * 진실을 아는 사람들이 있는 파티에 참여하는 사람들도 진실을 알게 되는데, 이게 1다리만 계산하면 되는 게 아니라 skewed tree 관계가 될 경우에는 반복수를 감안할 수 없기 떄문에 브루트포스로는 반복수의 기준이 명확하지 않다.
+ * 즉, 관계성을 계속 저장해둬야 하는 문제였던 거다.
+ * 이는 사람간의 그래프를 형성하는 문제라고 볼 수 있으므로, union find로 풀어낼 수 있다.
+ *
  * @algorithm union-find
  * @time O(logN) : union-find -> 132ms
  * @memory O(N*M) : parent 배열 * M 크기의 list
