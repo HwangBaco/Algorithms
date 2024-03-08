@@ -7,6 +7,9 @@ import java.util.StringTokenizer;
 
 /**
  * @intuition 브루트포스인줄 알았는데, union-find인 것 같다.
+ * @algorithm union-find
+ * @time O(logN) : union-find -> 132ms
+ * @memory O(N*M) : parent 배열 * M 크기의 list
  */
 public class BOJ_1043_거짓말 {
     private static int[] parent;
