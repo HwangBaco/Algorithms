@@ -1,16 +1,16 @@
 package 알고리즘연습.boj;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class BOJ_15666_N과M12 {
     private static int N, M;
+    private static HashSet<Integer> hs = new HashSet<>();
     private static int[] arr;
+    private static int[] selected;
+    private static String prev;
     private static StringBuilder sb;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,56 +18,43 @@ public class BOJ_15666_N과M12 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         arr = new int[N];
+        selected = new int[M];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            hs.add(Integer.parseInt(st.nextToken()));
+        }
+        int i = 0;
+        for (Integer h : hs) {
+            arr[i++] = h;
         }
         Arrays.sort(arr);
-        String prev = "";
-        do {
+        arr = Arrays.stream(arr).filter(o -> o != 0).toArray();
+        prev = "";
+        perm(0);
+        br.close();
+    }
+
+    private static void perm(int cnt) {
+        if (cnt == M) {
             sb = new StringBuilder();
             for (int i = 0; i < M; i++) {
-                sb.append(arr[i]).append(" ");
+                sb.append(selected[i]).append(" ");
             }
-            if (!prev.equals(sb.toString())) {
+            if (!sb.toString().equals(prev)) {
                 System.out.println(sb.toString());
                 prev = sb.toString();
             }
-        } while(np(arr));
-    }
-
-    private static boolean np(int[] arr) {
-        sb = new StringBuilder();
-        final int LI = arr.length - 1;
-
-        int i = LI;
-        while (i > 0 && arr[i - 1] >= arr[i]) {
-            --i;
+            return;
         }
-
-        if (i == 0) {
-            return false;
+        for (int i = 0; i < arr.length; i++) {
+            if (cnt > 0 && selected[cnt - 1] <= arr[i]) {
+                selected[cnt] = arr[i];
+                perm(cnt + 1);
+            } else if (cnt == 0) {
+                selected[cnt] = arr[i];
+                perm(cnt+1);
+            }
         }
-
-        int j = LI;
-        while (arr[i - 1] >= arr[j]) {
-            --j;
-        }
-
-        swap(arr, i - 1, j);
-
-        int k = LI;
-        while (i < k) {
-            swap(arr, i++, k--);
-        }
-
-        return true;
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }
