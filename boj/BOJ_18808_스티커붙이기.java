@@ -7,7 +7,6 @@ public class BOJ_18808_스티커붙이기 {
     private static int ans;
     private static int N, M, K, R, C;
     private static int[][] map; // 노트북
-    private static int[][] mapCopy; // 노트북 스티커 부착 테스트
     private static int[][] sticker; // 기본 스티커
     private static int turnCnt;
     public static void main(String[] args) throws IOException {
