@@ -13,13 +13,6 @@ public class BOJ_2116_주사위쌓기 {
         StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
-        // 맨 아래의 어떤 숫자를 고르고 그 숫자에 따라 연쇄적으로 나머지 주사위들의 숫자를 지운 뒤 최대값의 합을 출력
-        // 시간제한이 최대 2초이므로 완탐을 노리고 있는 것으로 보인다.
-
-        // 주사위들을 배열로 저장해둔다.
-        // 첫 번째 주사위의 선택 숫자를 6으로 순회한다. (이는 윗 면을 어떤 걸로 할지를 선택하는 거라서 6까지 순회해야 함
-        // 맨 아래 선택된 주사위에 따라 나머지 주사위의 숫자는 모두 정해짐, 남은 순자중 최대값을 탐색
-
         int N = Integer.parseInt(br.readLine());
         int[][] dices = new int[N][6];
         for (int i = 0; i < N; i++) {
