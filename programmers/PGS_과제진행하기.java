@@ -7,7 +7,7 @@ import java.util.*;
  * @intuition 새 과제가 오면 stash 해두고 나중에 시간 남을떄마다 꺼내보는 구조이므로 stack 문제겠다.
  * @algorithm stack
  * @time O(N logN) : 배열 정렬 O(N logN) * for loop iteration O(N) * stack 비우기 O(N)
- * @memory O(N^2) : plans가 2차원 배열, 그 외 stack 및 answer 는 O(N)
+ * @memory O(N) : plans가 2차원 배열이지만 이는 입력배열이라 제외, 그 외 stack 및 answer 는 최악의 경우 O(N)
  */
 public class PGS_과제진행하기 {
     public String[] solution(String[][] plans) {
