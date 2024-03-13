@@ -5,9 +5,9 @@ import java.util.*;
 
 /**
  * @intuition 완탐으로 가능할 듯 하다
- * @algorithm
- * @time O(N^4)
- * @memory O(N^2)
+ * @algorithm simulation (bfs)
+ * @time O(N^2 * log(N^2)) : 우선순위큐 BFS 시 맵의 모든 칸이 큐에 들어가면서 O(N^2) * 우선순위큐 연산시 O(logN^2) -> 144 ms
+ * @memory O(N^2) -> 14572 KB
  */
 public class BOJ_16236_아기상어 {
     private static int N, ans, cnt, sharkSize, sharkY, sharkX;
