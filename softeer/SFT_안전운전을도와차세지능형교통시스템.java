@@ -14,11 +14,13 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
     private static final int LEFT = 2;
 
     public static void main(String[] args) throws IOException {
+        // 기본 선언
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
+        // 기본 정보 저장
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         T = Integer.parseInt(st.nextToken());
@@ -30,6 +32,7 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
             delta[i] = new ArrayList<>();
         }
 
+        // 움직임 정보 저장
         delta[0].add(new int[]{-1, 0});
         delta[0].add(new int[]{0, 1});
         delta[0].add(new int[]{1, 0});
@@ -59,8 +62,7 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
         delta[11].add(new int[]{1, 0});
         delta[11].add(new int[]{0, -1});
 
-
-
+        // 각 교차로에 주어진 신호등 정보 저장
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 st = new StringTokenizer(br.readLine());
@@ -71,6 +73,7 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
             }
         }
 
+        // 답안 구하기
         bfs();
 
         br.close();
@@ -79,30 +82,31 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
         bw.close();
     }
 
+
     private static void bfs() {
         Queue<int[]> q = new ArrayDeque<>();
-        q.add(new int[]{0, 0, 1}); // 우 상 좌 하
+        q.add(new int[]{0, 0, UP}); // 최초 위치는 (0,0)으로, 방향은 UP으로 설정하고 진행
         visited[0][0] = true;
-        ans = 1;
-        int[][] time = new int[N][N];
+        ans = 1; // 이미 한 칸은 방문한 채로 시작
+        int[][] time = new int[N][N]; // 시간을 계산하기 위한 배열 선언
         time[0][0] = 0;
 
         while (!q.isEmpty()) {
             int[] now = q.poll();
             int y = now[0];
             int x = now[1];
-            if (time[y][x] == T) {
+            if (time[y][x] == T) { // 목표 시간이 다 되면 종료
                 return;
             }
             int nowDir = now[2];
-            int light = arr[y][x][time[y][x] % 4];
+            int light = arr[y][x][time[y][x] % 4]; // 신호등 idx 추출
 
-            for (int[] d : delta[light]) {
+            for (int[] d : delta[light]) { // 신호등에 따라 갈 수 있는 좌표 전부 탐색
                 int ny = y + d[0];
                 int nx = x + d[1];
 
-                if (canGo(ny, nx, nowDir, light)) {
-                    if (!visited[ny][nx]) {
+                if (canGo(ny, nx, nowDir, light)) { // 맵을 이탈하지 않으면서, 진행 방향이 신호등과 일치하면 can go
+                    if (!visited[ny][nx]) { // 처음 방문하는 교차로 수 체크
                         ans++;
                         visited[ny][nx] = true;
                     }
@@ -113,7 +117,7 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
         }
     }
 
-    private static int getDir(int dy, int dx, int dir) {
+    private static int getDir(int dy, int dx, int dir) { // 진행방향 변환 메서드
         if (dir == DOWN) { // 아래로 이동하면서
             if (dx < 0) {
                 return LEFT;
