@@ -140,11 +140,11 @@ public class SFT_안전운전을도와차세지능형교통시스템 {
             }
         } else if (dir == LEFT) {
             if (dy < 0) {
-                return DOWN;
+                return UP;
             } else if (dy == 0) {
                 return LEFT;
             } else if (dy > 0) {
-                return UP;
+                return DOWN;
             }
         }
         return -1;
