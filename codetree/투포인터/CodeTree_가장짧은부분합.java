@@ -1,4 +1,4 @@
-package 알고리즘연습.codetree.twopointer;
+package 알고리즘연습.codetree.투포인터;
 
 import java.io.*;
 import java.util.*;
