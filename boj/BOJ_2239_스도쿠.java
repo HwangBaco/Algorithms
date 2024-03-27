@@ -6,7 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @time
+ * @intuition 사전순 출력이라는 말에서 완탐 느낌이 났지만, 시간초과가 날까 고민했다. 근데 시간 복잡도 계산해보니 충분할 것 같아서 백트래킹으로 구현했다.
+ * @algorithm backtracking
+ * @time O(9 * N^2) 최대 N^2개의 빈칸에 대하여 9개씩의 경우를 배치 -> 368 ms
+ * @memory O(N^2) N^2의 맵 운영 -> 16388 KB
  */
 public class BOJ_2239_스도쿠 {
     private static int[] rowFlag = new int[10]; // 1 ~ 9번째 row에 대하여 고른 숫자 선택
