@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -47,37 +46,17 @@ public class SWEA_특이한자석 {
             }
             for (int i = 0; i < K; i++) {
                 turnList.clear();
+
                 st = new StringTokenizer(br.readLine());
                 int w = Integer.parseInt(st.nextToken()); // 회전시키려는 자석 번호
                 int d = Integer.parseInt(st.nextToken()); // 회전 방향 (1 : 오른쪽, -1 : 왼쪽)
                 turnList.add(new int[]{w, d});
-                // TODO : 회전 시작 전에 회전할 톱니 체크 -> turnList {자석 번호, 회전 방향} 담아둠
-                int ww = w;
-                int prevD = d;
-                while (--ww >= 1) { // 왼쪽 바퀴 회전가능여부 검사
-                    if (wheels[ww][R] == wheels[ww + 1][L]) {
-                        break;
-                    }
-                    turnList.add(new int[]{ww, prevD = (prevD == 1 ? -1 : 1)});
-                }
-                ww = w;
-                prevD = d;
-                while (++ww <= 4) {
-                    if (wheels[ww][L] == wheels[ww - 1][R]) {
-                        break;
-                    }
-                    turnList.add(new int[]{ww, prevD = (prevD == 1 ? -1 : 1)});
-                }
 
-//                System.out.println("---------------");
+                // TODO : 회전 시작 전에 회전할 톱니 체크 -> turnList {자석 번호, 회전 방향} 담아둠
+                findChainTurnList(w, d, wheels);
+
                 // TODO : turnList 순회하면서 자석 회전 - turn()
-                for (int[] turnInfo : turnList) {
-                    int wheel = turnInfo[0];
-//                    System.out.println("wheel = " + wheel);
-                    int dir = turnInfo[1];
-//                    System.out.println("dir = " + dir);
-                    turn(wheels, wheel, dir);
-                }
+                executeChainTurn(wheels);
             }
 
             int ans = 0;
@@ -90,14 +69,32 @@ public class SWEA_특이한자석 {
         System.out.println(sb.toString());
     }
 
-    private static int getRight(int[][] wheels, int wheel) {
-        return wheels[wheel][R];
+    private static void executeChainTurn(int[][] wheels) {
+        for (int[] turnInfo : turnList) {
+            int wheel = turnInfo[0];
+            int dir = turnInfo[1];
+            turn(wheels, wheel, dir);
+        }
     }
 
-//    private static int getLeft(int[][] wheels, int wheel) {
-//
-//    }
-
+    private static void findChainTurnList(int w, int d, int[][] wheels) {
+        int ww = w;
+        int prevD = d;
+        while (--ww >= 1) { // 왼쪽 바퀴 회전가능여부 검사
+            if (wheels[ww][R] == wheels[ww + 1][L]) {
+                break;
+            }
+            turnList.add(new int[]{ww, prevD = (prevD == 1 ? -1 : 1)});
+        }
+        ww = w;
+        prevD = d;
+        while (++ww <= 4) {
+            if (wheels[ww][L] == wheels[ww - 1][R]) {
+                break;
+            }
+            turnList.add(new int[]{ww, prevD = (prevD == 1 ? -1 : 1)});
+        }
+    }
     private static void turn(int[][] wheels, int wheel, int dir) {
         int[] temp = new int[8];
         int tdx = dir == 1 ? 1 : 7;
