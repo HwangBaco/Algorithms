@@ -1,67 +1,89 @@
 package 알고리즘연습.codetree.그래프.다익스트라;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class CodeTree_최단거리11 {
-    private static int N, M, S, E;
-    private static List<int[]>[] adj;
-    public static final int V = 0;
-    public static final int W = 1;
-    public static final int INF = (int) 1e9;
+    private static int N, M;
+    private static int[][] adj;
     private static int[] dist;
-    public static void main(String[] args) throws Exception {
+    private static boolean[] visited;
+    public static void main(String[] args) throws Exception{
+        // 여기에 코드를 작성해주세요.
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        adj = new ArrayList[N + 1];
-        dist = new int[N + 1];
+        dist = new int[N+1];
+        visited = new boolean[N+1];
+        adj = new int[N+1][N+1];
 
         for (int i = 1; i <= N; i++) {
-            adj[i] = new ArrayList<>(N+1);
+            dist[i] = (int) 1e9;
         }
+
 
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
             int w = Integer.parseInt(st.nextToken());
-            adj[a].add(new int[]{b, w});
-            adj[b].add(new int[]{a, w});
+
+            adj[a][b] = w;
+            adj[b][a] = w;
         }
 
         st = new StringTokenizer(br.readLine());
-        S = Integer.parseInt(st.nextToken());
-        E = Integer.parseInt(st.nextToken());
+        int s = Integer.parseInt(st.nextToken());
+        int e = Integer.parseInt(st.nextToken());
 
+        dist[e] = 0;
         for (int i = 1; i <= N; i++) {
-            dist[i] = INF;
-        }
-
-        Queue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(o -> o[W]));
-        dist[S] = 0;
-        pq.add(new int[]{S, 0});
-
-        while (!pq.isEmpty()) {
-            int[] now = pq.poll();
-            int nowv = now[0];
-            int noww = now[1];
-
-            if (noww != dist[nowv]) {
-                continue;
+            int minIdx = -1;
+            for (int j = 1; j<= N; j++) {
+                if (visited[j]) {
+                    continue;
+                }
+                if (minIdx == -1 || dist[j] < dist[minIdx]) {
+                    minIdx = j;
+                }
             }
+            visited[minIdx] = true;
 
-            for (int[] a : adj[nowv]) {
-                int v = a[V];
-                int w = a[W];
-                if (dist[v] > dist[nowv] + w) {
-                    dist[v] = dist[nowv] + w;
-                    pq.add(new int[]{v, dist[v]});
+            for (int j = 1; j <= N; j++) {
+                if (adj[minIdx][j] == 0) {
+                    continue;
+                }
+
+                int w = adj[minIdx][j];
+
+                if (dist[j] > dist[minIdx] + w) {
+                    dist[j] = dist[minIdx] + w;
                 }
             }
         }
-        System.out.println(dist[E]);
+
+        int idx = s;
+        Deque<Integer> dq = new ArrayDeque<>();
+        dq.add(s);
+        while (idx != e) {
+            for (int i = 1; i <= N; i++) {
+                if (adj[idx][i] == 0) {
+                    continue;
+                }
+                if (dist[idx] == dist[i] + adj[idx][i]) {
+                    dq.add(i);
+                    idx = i;
+                    break;
+                }
+            }
+        }
+        sb.append(dist[s]).append("\n");
+        for (int i : dq) {
+            sb.append(i).append(" ");
+        }
+        System.out.println(sb.toString());
     }
 }
