@@ -3,9 +3,12 @@ package 알고리즘연습.boj;
 import java.io.*;
 import java.util.*;
 
+/**
+ * @algorithm backtracking
+ * @time O()
+ */
 public class BOJ_17136_색종이붙이기 {
     private static int[][] grid = new int[10][10];
-    private static List<int[]> li = new ArrayList<>();
     private static int ans = (int) 1e9;
     private static Map<Integer, Integer> map = new HashMap<>();
     public static void main(String[] args) throws IOException {
@@ -29,6 +32,10 @@ public class BOJ_17136_색종이붙이기 {
     }
 
     private static void go(int y, int x, int depth) {
+        if (depth > ans) {
+            return;
+        }
+
         if (y == 10 && x == 0) {
             ans = Math.min(ans, depth); // 가능한 최소 개수 반환
             return;
