@@ -14,7 +14,6 @@ public class BOJ_17136_색종이붙이기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-
         for (int i = 1; i <= 5; i++) {
             map.put(i, 5);
         }
