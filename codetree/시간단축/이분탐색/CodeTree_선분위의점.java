@@ -13,9 +13,11 @@ public class CodeTree_선분위의점 {
         StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
+        int[] arr = new int[n + 2];
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
+        arr[0] = -1;
+        arr[n+1] = (int) 1e9 + 1;
+        for (int i = 1; i <= n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
@@ -28,12 +30,13 @@ public class CodeTree_선분위의점 {
             // a는 그것보다 크거나 같은 숫자의 좌표를 반환
             // b는 그것보다 작거나 같은 숫자의 좌표를 반환
             // b-a+1 출력
-            int aub = getLowerBound(arr, a);
-            System.out.println("aub = " + aub);
-            int blb = getUpperBound(arr, b);
-            System.out.println("blb = " + blb);
+            int aub = getUpperBound(arr, a);
+            int blb = getLowerBound(arr, b);
             int res = blb - aub;
-            sb.append(res < 0 ? 0 : res + 1).append("\n");
+            if (aub > blb) {
+                res = 0;
+            }
+            sb.append(res).append("\n");
         }
         System.out.println(sb);
     }
@@ -44,13 +47,14 @@ public class CodeTree_선분위의점 {
         int ans = right;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (arr[mid] >= v) {
+            if (mid > 0 && arr[mid] >= v) {
                 right = mid - 1;
                 ans = Math.min(ans, mid);
             } else {
                 left = mid + 1;
             }
         }
+
         return ans;
     }
 
@@ -60,7 +64,7 @@ public class CodeTree_선분위의점 {
         int ans = left;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (arr[mid] <= v) {
+            if (mid <= arr.length && mid <= arr.length && arr[mid] <= v) {
                 left = mid + 1;
                 ans = Math.max(ans, mid);
             } else {
