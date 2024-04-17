@@ -1,3 +1,5 @@
+package 알고리즘연습.programmers;
+
 import java.util.*;
 
 class PGS_체육복 {
