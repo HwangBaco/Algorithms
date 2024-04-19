@@ -5,17 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-/**
- * int[] D : 각 건물당 건설에 걸리는 시간
- * X, Y : 건설 순서 (X -> Y)
- * W : 백준이가 승리하기 위해 건설해야 할 건물의 번호
- */
 public class BOJ_1005_ACMCraft_copy {
-    /**
-     *
-     *
-     * @return minimum time to build W
-     */
     static int N, K, X, Y, W;
     static int[] D;
     static List<Integer>[] edges;
@@ -63,8 +53,10 @@ public class BOJ_1005_ACMCraft_copy {
             while (!q.isEmpty()) {
                 Integer now = q.poll();
                 for (int next : edges[now]) {
-                    inDegree[next]--;
+
                     dp[next] = Math.max(dp[next], dp[now] + D[next]);
+
+                    inDegree[next]--;
                     if (inDegree[next] == 0) {
                         q.add(next);
                     }
