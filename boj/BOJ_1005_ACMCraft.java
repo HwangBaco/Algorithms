@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_1005_ACMCraft_copy {
+public class BOJ_1005_ACMCraft {
     static int N, K, X, Y, W;
     static int[] D;
     static List<Integer>[] edges;
