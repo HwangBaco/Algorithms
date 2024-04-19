@@ -3,7 +3,7 @@ package 알고리즘연습.boj;
 import java.io.*;
 import java.util.*;
 
-public class BOJ_보석도둑 {
+public class BOJ_1202_보석도둑 {
     static int[] bags;
     private static int N, K, M, V;
     public static void main(String[] args) throws IOException {
