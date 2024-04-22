@@ -26,14 +26,12 @@ public class BOJ_9252_LCS2 {
         int sl = s.length()-1;
         int ssl = ss.length()-1;
         while (sl >= 0 && ssl >= 0) {
-            if (s.charAt(sl) == ss.charAt(ssl)) {
-                sb.append(s.charAt(sl));
-            }
             if (dp[sl + 1][ssl] == dp[sl + 1][ssl + 1]) {
                 ssl--;
             } else if (dp[sl][ssl + 1] == dp[sl + 1][ssl + 1]) {
                 sl--;
             } else {
+                sb.append(s.charAt(sl));
                 sl--;
                 ssl--;
             }
