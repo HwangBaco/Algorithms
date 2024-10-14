@@ -5,6 +5,7 @@ class Solution(object):
         :type word2: str
         :rtype: str
         """
+        
         length = len(word1)
         if length < len(word2):
             length = len(word2)
